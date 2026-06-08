@@ -1,26 +1,181 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #fdfcfb;
+  --surface: #ffffff;
+  --surface-warm: #faf6f4;
+  --ink: #16120f;
+  --ink-soft: #6b6360;
+  --line: #ece5e2;
+  --crimson: #cd2c2c;
+  --crimson-deep: #a91f24;
+  --crimson-ink: #b02424;
+  --rose-tint: #fbeeec;
+  --rose-soft: #f7e3df;
+  --gold: #e8a33d;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-warm: var(--surface-warm);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-crimson: var(--crimson);
+  --color-crimson-deep: var(--crimson-deep);
+  --color-crimson-ink: var(--crimson-ink);
+  --color-rose-tint: var(--rose-tint);
+  --color-rose-soft: var(--rose-soft);
+  --color-gold: var(--gold);
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-tech: var(--font-chakra), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--crimson);
+  color: #fff;
+}
+
+/* ---------- atmosphere ---------- */
+
+.hero-atmosphere {
+  background:
+    radial-gradient(52rem 30rem at 12% 8%, rgba(205, 44, 44, 0.1), transparent 60%),
+    radial-gradient(40rem 26rem at 88% 22%, rgba(232, 163, 61, 0.09), transparent 65%),
+    radial-gradient(36rem 24rem at 70% 90%, rgba(205, 44, 44, 0.06), transparent 60%),
+    var(--bg);
+}
+
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+.dotted-grid {
+  background-image: radial-gradient(rgba(22, 18, 15, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* ---------- type helpers ---------- */
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-tech {
+  font-family: var(--font-tech);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* ---------- reveal animations ---------- */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rise-1 { animation-delay: 0.05s; }
+.rise-2 { animation-delay: 0.15s; }
+.rise-3 { animation-delay: 0.25s; }
+.rise-4 { animation-delay: 0.35s; }
+.rise-5 { animation-delay: 0.45s; }
+.rise-6 { animation-delay: 0.55s; }
+
+/* only hide reveal targets once JS has confirmed it will reveal them */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.pulse-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes bar-grow {
+  from { transform: scaleY(0.2); }
+  to { transform: scaleY(1); }
+}
+
+.bar-grow {
+  transform-origin: bottom;
+  animation: bar-grow 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.ticker {
+  animation: ticker 36s linear infinite;
+}
+
+.ticker:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise, .reveal, .bar-grow, .ticker, .pulse-dot {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- card hover ---------- */
+
+.lift {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+
+.lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px -18px rgba(169, 31, 36, 0.22);
+  border-color: rgba(205, 44, 44, 0.35);
 }
