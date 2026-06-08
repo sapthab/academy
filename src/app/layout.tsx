@@ -62,12 +62,17 @@ const orgJsonLd = {
   telephone: "+91 90000 00000",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "100 Mission Street, White Town",
+    streetAddress: "First Floor, 208, 100 Feet Road, Mudaliarpet",
     addressLocality: "Puducherry",
-    postalCode: "605001",
+    postalCode: "605004",
     addressCountry: "IN",
   },
-  sameAs: [],
+  parentOrganization: {
+    "@type": "Organization",
+    name: "AgileSoftLabs",
+    url: "https://www.agilesoftlabs.com/",
+  },
+  sameAs: ["https://www.agilesoftlabs.com/"],
 };
 
 export default function RootLayout({

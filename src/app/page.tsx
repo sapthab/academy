@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  site,
   stats,
   whyFeatures,
   programs,
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Hero />
       <StatsBar />
       <WhySection />
+      <AgencySection />
       <ProgramsSection />
       <JourneySection />
       <ProjectsSection />
@@ -36,8 +38,17 @@ function Hero() {
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-16 pt-14 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-24 lg:pt-20">
         {/* Left — copy */}
         <div>
-          <div className="rise rise-1">
+          <div className="rise rise-1 flex flex-wrap items-center gap-2.5">
             <Pill>AI Academy · Puducherry</Pill>
+            <a
+              href={site.parent.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-1.5 font-tech text-[11px] font-medium uppercase tracking-[0.12em] text-ink-soft transition-colors hover:border-crimson/40 hover:text-crimson"
+            >
+              Part of <span className="font-semibold text-ink">{site.parent.name}</span>
+              <ArrowRight className="size-3" />
+            </a>
           </div>
           <h1 className="rise rise-2 font-display mt-6 text-balance text-[2.6rem] font-bold leading-[1.04] tracking-tight sm:text-6xl lg:text-[4.1rem]">
             Learn AI By{" "}
@@ -234,6 +245,110 @@ function WhySection() {
               <p className="mt-2.5 text-[14.5px] leading-relaxed text-ink-soft">{f.body}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------ AGENCY (AgileSoftLabs) ------------------------------ */
+
+function AgencySection() {
+  return (
+    <section className="px-5 pb-24 lg:px-8">
+      <div className="reveal relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-line bg-surface-warm">
+        <div className="grid items-stretch gap-0 lg:grid-cols-[1.05fr_0.95fr]">
+          {/* Left — story */}
+          <div className="p-9 sm:p-12">
+            <span className="inline-flex items-center gap-2 rounded-full border border-crimson/15 bg-rose-tint px-4 py-1.5 font-tech text-[11px] font-medium uppercase tracking-[0.14em] text-crimson-ink">
+              <span className="size-1.5 rounded-full bg-crimson pulse-dot" />
+              Powered by a real AI agency
+            </span>
+            <h2 className="font-display mt-6 text-balance text-3xl font-bold leading-[1.1] sm:text-4xl">
+              We&apos;re the training arm of{" "}
+              <a
+                href={site.parent.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-tech font-semibold text-crimson underline decoration-crimson/30 underline-offset-4 transition-colors hover:decoration-crimson"
+              >
+                {site.parent.name}
+              </a>
+              .
+            </h2>
+            <p className="mt-4 max-w-xl text-[15.5px] leading-relaxed text-ink-soft">
+              AGS AI Academy is part of{" "}
+              <span className="font-semibold text-ink">{site.parent.name}</span> —{" "}
+              {site.parent.blurb}. That means our students don&apos;t practise on toy
+              datasets. You get the opportunity to work on{" "}
+              <span className="font-semibold text-ink">real-time, live client projects</span>{" "}
+              shipping inside an actual agency, alongside engineers who do it for a living.
+            </p>
+
+            <ul className="mt-7 grid gap-3.5 sm:grid-cols-2">
+              {[
+                "Work on live agency client projects",
+                "Sit in real sprints, standups & code reviews",
+                "Ship to production, not to a grade",
+                "Mentored by working AgileSoftLabs engineers",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-[14px] text-ink/80">
+                  <Check className="mt-0.5 size-4 shrink-0 text-crimson" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href={site.parent.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-8 inline-flex items-center gap-2 text-[14.5px] font-semibold text-crimson hover:text-crimson-deep"
+            >
+              Visit {site.parent.name}
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
+
+          {/* Right — relationship visual */}
+          <div className="relative flex items-center justify-center border-t border-line bg-ink p-9 text-white sm:p-12 lg:border-l lg:border-t-0">
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-[0.14]"
+              style={{
+                backgroundImage:
+                  "radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px)",
+                backgroundSize: "24px 24px",
+              }}
+            />
+            <div className="relative w-full max-w-sm">
+              <div className="rounded-2xl border border-white/12 bg-white/[0.05] p-5 text-center">
+                <p className="font-display text-lg font-bold">{site.parent.name}</p>
+                <p className="mt-1 text-[12px] text-white/55">AI-native software agency</p>
+              </div>
+              <div className="my-3 flex flex-col items-center text-white/30">
+                <span className="h-5 w-px bg-white/20" />
+                <span className="font-tech rounded-full border border-white/12 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.16em] text-rose-soft">
+                  trains
+                </span>
+                <span className="h-5 w-px bg-white/20" />
+              </div>
+              <div className="rounded-2xl border border-crimson/30 bg-crimson/15 p-5 text-center">
+                <p className="font-display text-lg font-bold">
+                  AGS <span className="text-crimson">AI</span> Academy
+                </p>
+                <p className="mt-1 text-[12px] text-white/55">you, on real client work</p>
+              </div>
+              <div className="mt-5 rounded-2xl bg-white/[0.04] p-4 font-tech text-[11.5px] leading-relaxed text-white/60">
+                <span className="text-crimson">student</span>.join(
+                <span className="text-gold">&quot;live_project&quot;</span>) →{" "}
+                <span className="inline-flex items-center gap-1.5 text-emerald-400">
+                  <span className="size-1.5 rounded-full bg-emerald-400 pulse-dot" /> real
+                  client, real stakes
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

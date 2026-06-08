@@ -48,8 +48,17 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-[14.5px] leading-relaxed text-ink-soft">
-              Puducherry&apos;s build-first AI academy. Real projects, real internships,
-              real careers — learn AI by shipping products, not watching slides.
+              Puducherry&apos;s build-first AI academy and the training arm of{" "}
+              <a
+                href={site.parent.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-ink hover:text-crimson"
+              >
+                {site.parent.name}
+              </a>
+              . Real client projects, real internships, real careers — learn AI by
+              shipping products, not watching slides.
             </p>
             <div className="mt-6 space-y-2 text-[14px] text-ink-soft">
               <p>{site.address}</p>
@@ -95,7 +104,16 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-line pt-7 sm:flex-row sm:items-center">
           <p className="text-[13px] text-ink-soft">
-            © {new Date().getFullYear()} AGS AI Academy, Puducherry. All rights reserved.
+            © {new Date().getFullYear()} AGS AI Academy · A{" "}
+            <a
+              href={site.parent.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-ink hover:text-crimson"
+            >
+              {site.parent.name}
+            </a>{" "}
+            company, Puducherry. All rights reserved.
           </p>
           <p className="font-tech text-[11px] uppercase tracking-[0.16em] text-ink/40">
             Learn · Build · Intern · Launch · Get Hired

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
 import { SectionHead, Pill } from "@/components/ui";
 import { CtaBand } from "@/components/cta-band";
-import { FeatureIcon, Check } from "@/components/icons";
+import { FeatureIcon, Check, ArrowRight } from "@/components/icons";
+import { site } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About Us — Puducherry's Build-First AI Academy",
@@ -76,6 +77,60 @@ export default function AboutPage() {
               products and companies from Puducherry to the world. The academy that
               made Pondy a name on India&apos;s AI map.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Parent company — AgileSoftLabs */}
+      <section className="px-5 pb-24 lg:px-8">
+        <div className="reveal mx-auto grid max-w-6xl items-center gap-10 rounded-[2rem] border border-line bg-surface-warm p-9 sm:p-12 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <Pill>Part of {site.parent.name}</Pill>
+            <h2 className="font-display mt-5 text-3xl font-bold leading-tight sm:text-4xl">
+              Born inside a working{" "}
+              <span className="font-tech font-semibold text-crimson">AI agency.</span>
+            </h2>
+            <p className="mt-4 max-w-xl text-[15.5px] leading-relaxed text-ink-soft">
+              AGS AI Academy is the training arm of{" "}
+              <a
+                href={site.parent.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-ink underline decoration-crimson/30 underline-offset-4 hover:text-crimson hover:decoration-crimson"
+              >
+                {site.parent.name}
+              </a>
+              , {site.parent.blurb}. We didn&apos;t bolt a &ldquo;projects module&rdquo;
+              onto a syllabus — the academy grew out of a real agency that needed
+              engineers who could build. So our students get something most institutes
+              can&apos;t offer:{" "}
+              <span className="font-semibold text-ink">
+                the opportunity to work on real-time, live client projects
+              </span>{" "}
+              from day one, mentored by the engineers shipping them.
+            </p>
+            <a
+              href={site.parent.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-7 inline-flex items-center gap-2 text-[14.5px] font-semibold text-crimson hover:text-crimson-deep"
+            >
+              Explore {site.parent.name}
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
+          <div className="grid gap-3.5 sm:grid-cols-2">
+            {[
+              { t: "Live client work", b: "Real projects with real deadlines, not practice sets." },
+              { t: "Agency mentors", b: "Learn from engineers who ship to production daily." },
+              { t: "Production stack", b: "The exact tools AgileSoftLabs uses on client builds." },
+              { t: "Real references", b: "Graduate with work and people who can vouch for you." },
+            ].map((c) => (
+              <div key={c.t} className="rounded-2xl border border-line bg-surface p-5">
+                <p className="font-display text-[15px] font-bold">{c.t}</p>
+                <p className="mt-1.5 text-[13px] leading-relaxed text-ink-soft">{c.b}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -4,8 +4,14 @@ export const site = {
   phone: "+91 90000 00000",
   whatsapp: "https://wa.me/919000000000",
   email: "hello@agsacademy.in",
-  address: "100 Mission Street, White Town, Puducherry 605001",
+  address: "First Floor, 208, 100 Feet Road, Mudaliarpet, Puducherry, 605004, India",
   city: "Puducherry",
+  parent: {
+    name: "AgileSoftLabs",
+    url: "https://www.agilesoftlabs.com/",
+    blurb:
+      "an AI-native software agency building production systems for healthcare, fintech and e-commerce clients",
+  },
 };
 
 export const stats = [
