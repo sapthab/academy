@@ -1,19 +1,21 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { PageHero } from "@/components/page-hero";
 import { LeadForm } from "@/components/lead-form";
 import { WhatsApp } from "@/components/icons";
 import { site } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Contact Us — Talk to a Counsellor at AGS AI Academy Pondicherry",
   description:
     "Contact AGS AI Academy in Puducherry: book a free counselling call, chat on WhatsApp, or visit our campus. Phone, email and address — we respond within 24 hours.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
+        crumbs={[{ name: "Home", path: "/" }, { name: "Contact" }]}
         pill="Contact Us"
         title="Talk to a human,"
         accent="not a chatbot."

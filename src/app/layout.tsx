@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { RevealObserver } from "@/components/reveal-observer";
+import { SITE_URL, OG_IMAGE, organizationSchema, websiteSchema, jsonLd } from "@/lib/seo";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -25,13 +26,16 @@ const chakra = Chakra_Petch({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://agsacademy.in"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "AGS AI Academy — AI Course in Pondicherry | Learn AI By Building Real Products",
     template: "%s | AGS AI Academy Pondicherry",
   },
   description:
     "AGS AI Academy is Puducherry's hands-on AI academy. Become an AI Engineer through real client projects, AI internships, startup incubation and mentorship. Artificial Intelligence training in Pondicherry with placement assistance.",
+  applicationName: "AGS AI Academy",
+  alternates: { canonical: `${SITE_URL}/` },
+  icons: { icon: [{ url: "/icon.png", type: "image/png" }], apple: "/icon.png" },
   keywords: [
     "AI Course in Pondicherry",
     "Artificial Intelligence Training Pondicherry",
@@ -45,34 +49,20 @@ export const metadata: Metadata = {
     title: "AGS AI Academy — Learn AI By Building Real Products",
     description:
       "Become an AI Engineer through real-world projects, internships, and mentorship in Puducherry.",
+    url: `${SITE_URL}/`,
     type: "website",
     locale: "en_IN",
     siteName: "AGS AI Academy",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "AGS AI Academy" }],
   },
-};
-
-const orgJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  name: "AGS AI Academy",
-  description:
-    "Puducherry's build-first AI academy — AI courses, internships, startup incubation and placement assistance.",
-  url: "https://agsacademy.in",
-  email: "hello@agsacademy.in",
-  telephone: "+91 90000 00000",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "First Floor, 208, 100 Feet Road, Mudaliarpet",
-    addressLocality: "Puducherry",
-    postalCode: "605004",
-    addressCountry: "IN",
+  twitter: {
+    card: "summary_large_image",
+    title: "AGS AI Academy — Learn AI By Building Real Products",
+    description:
+      "Become an AI Engineer through real-world projects, internships, and mentorship in Puducherry.",
+    images: [OG_IMAGE],
   },
-  parentOrganization: {
-    "@type": "Organization",
-    name: "AgileSoftLabs",
-    url: "https://www.agilesoftlabs.com/",
-  },
-  sameAs: ["https://www.agilesoftlabs.com/"],
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -86,10 +76,8 @@ export default function RootLayout({
       className={`${bricolage.variable} ${figtree.variable} ${chakra.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organizationSchema())} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(websiteSchema())} />
         <RevealObserver />
         <Navbar />
         <main className="flex-1">{children}</main>

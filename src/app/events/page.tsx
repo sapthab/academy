@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
+import { pageMeta, eventSchema, jsonLd } from "@/lib/seo";
 import { events } from "@/lib/data";
 import { PageHero } from "@/components/page-hero";
 import { LeadForm } from "@/components/lead-form";
 import { SectionHead } from "@/components/ui";
 import { CtaBand } from "@/components/cta-band";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Events & Workshops — AI Bootcamps, Hackathons & Demo Days in Pondicherry",
   description:
     "Join AGS AI Academy's AI events in Pondicherry: hands-on AI agent workshops, the Pondy AI Hackathon, GenAI bootcamps and student demo days. Free registration.",
-};
+  path: "/events",
+});
 
 const typeStyles: Record<string, string> = {
   Workshop: "bg-rose-tint text-crimson-ink",
@@ -21,7 +22,15 @@ const typeStyles: Record<string, string> = {
 export default function EventsPage() {
   return (
     <>
+      {events.map((e) => (
+        <script
+          key={e.slug}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={jsonLd(eventSchema(e))}
+        />
+      ))}
       <PageHero
+        crumbs={[{ name: "Home", path: "/" }, { name: "Events" }]}
         pill="Events & Workshops"
         title="Pondy's AI scene"
         accent="meets here."

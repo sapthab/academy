@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { FaqList } from "./faq-list";
 import { faqs } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "FAQs — Admissions, Programs, Internships & Fees",
   description:
     "Answers to common questions about AGS AI Academy Pondicherry: admissions process, coding prerequisites, internship guarantees, placement support, fees, EMI and refunds.",
-};
+  path: "/faqs",
+});
 
 export default function FaqsPage() {
   const jsonLd = {
@@ -28,6 +29,7 @@ export default function FaqsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageHero
+        crumbs={[{ name: "Home", path: "/" }, { name: "FAQs" }]}
         pill="FAQs"
         title="Questions?"
         accent="Straight answers."

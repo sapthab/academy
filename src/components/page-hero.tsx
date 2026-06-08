@@ -1,4 +1,5 @@
 import { Pill } from "./ui";
+import { Breadcrumbs, type Crumb } from "./breadcrumbs";
 
 export function PageHero({
   pill,
@@ -6,16 +7,19 @@ export function PageHero({
   accent,
   body,
   children,
+  crumbs,
 }: {
   pill: string;
   title: string;
   accent?: string;
   body?: string;
   children?: React.ReactNode;
+  crumbs?: Crumb[];
 }) {
   return (
     <section className="hero-atmosphere grain relative overflow-hidden border-b border-line/60">
-      <div className="mx-auto max-w-7xl px-5 py-16 text-center lg:px-8 lg:py-20">
+      {crumbs ? <Breadcrumbs items={crumbs} /> : null}
+      <div className="mx-auto max-w-7xl px-5 pb-16 pt-10 text-center lg:px-8 lg:pb-20 lg:pt-12">
         <div className="rise rise-1">
           <Pill>{pill}</Pill>
         </div>

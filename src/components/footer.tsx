@@ -115,9 +115,13 @@ export function Footer() {
             </a>{" "}
             company, Puducherry. All rights reserved.
           </p>
-          <p className="font-tech text-[11px] uppercase tracking-[0.16em] text-ink/40">
-            Learn · Build · Intern · Launch · Get Hired
-          </p>
+          <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[12.5px] text-ink-soft">
+            <Link href="/privacy" className="hover:text-crimson">Privacy</Link>
+            <span className="text-ink/25">·</span>
+            <Link href="/terms" className="hover:text-crimson">Terms</Link>
+            <span className="text-ink/25">·</span>
+            <Link href="/refund-policy" className="hover:text-crimson">Refund Policy</Link>
+          </nav>
         </div>
       </div>
     </footer>

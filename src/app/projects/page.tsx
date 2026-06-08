@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { ProjectsGrid } from "./projects-grid";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Student Projects Portfolio — AI Agents, Automation, Cyber Security & Cloud",
   description:
     "Explore real capstone and internship projects built by AGS AI Academy students in Pondicherry: AI agents, automation tools, cyber security systems, cloud SaaS and blockchain apps.",
-};
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   const stats = [
@@ -20,6 +21,7 @@ export default function ProjectsPage() {
   return (
     <>
       <PageHero
+        crumbs={[{ name: "Home", path: "/" }, { name: "Projects" }]}
         pill="Projects Portfolio"
         title="Real projects."
         accent="Real student engineers."

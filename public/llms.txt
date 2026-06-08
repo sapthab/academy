@@ -1,0 +1,35 @@
+# AGS AI Academy
+
+> AGS AI Academy is a build-first AI academy in Puducherry (Pondicherry), India, and the training arm of AgileSoftLabs. Students become AI engineers by building real client projects, doing structured AI internships, and developing a deployed portfolio. Programs cover Python, Machine Learning, Deep Learning, LangChain, RAG, AI Agents, MCP servers, and AI deployment.
+
+## Key facts
+
+- Location: First Floor, 208, 100 Feet Road, Mudaliarpet, Puducherry, 605004, India
+- Parent company: AgileSoftLabs (https://www.agilesoftlabs.com/)
+- Model: learn by building real, production AI projects — not slides
+- Outcomes: guaranteed internship, portfolio, placement assistance
+
+## Programs
+
+- [AI Foundations](https://www.agsaiacademy.com/courses/): 12 weeks, ₹15,000 — Python, data, ML basics, prompt engineering. For beginners.
+- [Professional AI Engineer](https://www.agsaiacademy.com/courses/): 24 weeks, ₹49,000 — ML, deep learning, LangChain, vector databases, RAG, AI agents, MCP servers, deployment. Flagship program with guaranteed internship.
+- [AI Startup Builder](https://www.agsaiacademy.com/courses/): 24 weeks, ₹99,000 — AI product design, SaaS/MVP development, customer discovery, fundraising. For founders.
+- [Corporate AI Training](https://www.agsaiacademy.com/courses/): custom team enablement.
+
+## Core pages
+
+- [Home](https://www.agsaiacademy.com/)
+- [Courses](https://www.agsaiacademy.com/courses/)
+- [AI Internship Program](https://www.agsaiacademy.com/internship/)
+- [Student Projects](https://www.agsaiacademy.com/projects/)
+- [Success Stories](https://www.agsaiacademy.com/success-stories/)
+- [Pricing](https://www.agsaiacademy.com/pricing/)
+- [About](https://www.agsaiacademy.com/about/)
+- [FAQs](https://www.agsaiacademy.com/faqs/)
+- [Blog](https://www.agsaiacademy.com/blog/)
+- [Contact](https://www.agsaiacademy.com/contact/)
+- [AI Course in Pondicherry](https://www.agsaiacademy.com/ai-course-in-pondicherry/)
+
+## Topics we teach
+
+Artificial Intelligence, Machine Learning, Generative AI, Deep Learning, Python, LangChain, RAG (Retrieval-Augmented Generation), AI Agents, MCP servers, Vector Databases, AI deployment, AI automation, cyber security, cloud, full-stack AI.

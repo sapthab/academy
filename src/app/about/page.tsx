@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { PageHero } from "@/components/page-hero";
 import { SectionHead, Pill } from "@/components/ui";
 import { CtaBand } from "@/components/cta-band";
 import { FeatureIcon, Check, ArrowRight } from "@/components/icons";
 import { site } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "About Us — Puducherry's Build-First AI Academy",
   description:
     "AGS AI Academy's mission: equip students with practical AI skills that translate into real-world opportunities. Meet the team behind Puducherry's leading AI academy.",
-};
+  path: "/about",
+});
 
 const values = [
   {
@@ -45,6 +46,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
+        crumbs={[{ name: "Home", path: "/" }, { name: "About" }]}
         pill="About AGS AI Academy"
         title="We exist to close the gap between"
         accent="degrees and careers."

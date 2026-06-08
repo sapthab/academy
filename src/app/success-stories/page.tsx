@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { pageMeta, reviewsSchema, jsonLd } from "@/lib/seo";
 import { studentReviews } from "@/lib/data";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Success Stories — What Our Interns Say",
   description:
     "Real reviews from AGS AI Academy interns: hands-on AI training, real-time client projects, and supportive mentorship at Puducherry's build-first AI academy, part of AgileSoftLabs.",
-};
+  path: "/success-stories",
+});
 
 function initials(name: string) {
   return name
@@ -30,7 +31,9 @@ const avatarTints = [
 export default function SuccessStoriesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(reviewsSchema())} />
       <PageHero
+        crumbs={[{ name: "Home", path: "/" }, { name: "Success Stories" }]}
         pill="Success Stories"
         title="In our interns'"
         accent="own words."

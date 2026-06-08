@@ -8,6 +8,7 @@ import {
   readingTime,
   formatDate,
 } from "@/lib/blogger";
+import { SITE_URL } from "@/lib/seo";
 import { BlogContent } from "@/components/blog-content";
 import { ArrowRight } from "@/components/icons";
 import { CtaBand } from "@/components/cta-band";
@@ -35,7 +36,7 @@ export async function generateMetadata({
 
   const title = stripHtml(post.title);
   const description = stripHtml(post.summary).substring(0, 160);
-  const canonical = `https://agsacademy.in/blog/${slugPath}`;
+  const canonical = `${SITE_URL}/blog/${slugPath}/`;
   const image = post.thumbnail.startsWith("data:") ? undefined : post.thumbnail;
 
   return {
@@ -74,7 +75,7 @@ export default async function BlogPostPage({
 
   const title = stripHtml(post.title);
   const mins = readingTime(post.content);
-  const canonical = `https://agsacademy.in/blog/${slugPath}`;
+  const canonical = `${SITE_URL}/blog/${slugPath}/`;
 
   const all = await getAllBlogPosts();
   const more = all.filter((p) => p.slug !== slugPath).slice(0, 4);
@@ -101,8 +102,8 @@ export default async function BlogPostPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://agsacademy.in" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://agsacademy.in/blog" },
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog/` },
       { "@type": "ListItem", position: 3, name: title, item: canonical },
     ],
   };

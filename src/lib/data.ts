@@ -1,11 +1,23 @@
 export const site = {
   name: "AGS AI Academy",
+  legalName: "AGS AI Academy (A unit of AgileSoftLabs)",
   tagline: "Learn AI By Building Real Products",
+  url: "https://www.agsaiacademy.com",
+  // TODO: replace with the real phone/WhatsApp before launch (must match Google Business Profile exactly).
   phone: "+91 90000 00000",
   whatsapp: "https://wa.me/919000000000",
-  email: "hello@agsacademy.in",
+  email: "hello@agsaiacademy.com",
   address: "First Floor, 208, 100 Feet Road, Mudaliarpet, Puducherry, 605004, India",
+  street: "First Floor, 208, 100 Feet Road, Mudaliarpet",
   city: "Puducherry",
+  region: "Puducherry",
+  postalCode: "605004",
+  country: "IN",
+  geo: { lat: 11.9416, lng: 79.8083 },
+  openingHours: "Mo-Sa 09:00-19:00",
+  foundingYear: "2024",
+  // TODO: add real social profile URLs here — they power schema `sameAs` (authority signal).
+  socials: [] as string[],
   parent: {
     name: "AgileSoftLabs",
     url: "https://www.agilesoftlabs.com/",

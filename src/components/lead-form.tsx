@@ -17,6 +17,39 @@ export function LeadForm({
   showMessage?: boolean;
 }) {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+    // No backend key configured yet → optimistic success (leads aren't delivered until a key is set).
+    if (!accessKey) {
+      setSent(true);
+      return;
+    }
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    fd.append("access_key", accessKey);
+    fd.append("subject", `New lead: ${heading} — AGS AI Academy`);
+    fd.append("from_name", "AGS AI Academy Website");
+    setSending(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: fd,
+      });
+      const data = await res.json();
+      if (data.success) setSent(true);
+      else setError("Something went wrong. Please call or WhatsApp us instead.");
+    } catch {
+      setError("Network error. Please call or WhatsApp us instead.");
+    } finally {
+      setSending(false);
+    }
+  }
 
   if (sent) {
     return (
@@ -36,10 +69,7 @@ export function LeadForm({
   return (
     <form
       className="rounded-3xl border border-line bg-surface p-6 shadow-[0_24px_60px_-30px_rgba(22,18,15,0.18)] sm:p-8"
-      onSubmit={(e) => {
-        e.preventDefault();
-        setSent(true);
-      }}
+      onSubmit={handleSubmit}
     >
       <h3 className="font-display text-xl font-bold">{heading}</h3>
       <p className="mt-1 text-[13.5px] text-ink-soft">
@@ -94,11 +124,15 @@ export function LeadForm({
       </div>
       <button
         type="submit"
-        className="group mt-6 flex w-full items-center justify-center gap-2.5 rounded-full bg-crimson px-7 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-crimson-deep"
+        disabled={sending}
+        className="group mt-6 flex w-full items-center justify-center gap-2.5 rounded-full bg-crimson px-7 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-crimson-deep disabled:opacity-60"
       >
-        {submitLabel}
-        <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+        {sending ? "Sending…" : submitLabel}
+        {!sending && <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />}
       </button>
+      {error && (
+        <p className="mt-3 text-center text-[13px] font-medium text-crimson">{error}</p>
+      )}
       <p className="mt-4 text-center text-[12px] text-ink/45">
         No spam. Your details go only to our admissions team.
       </p>

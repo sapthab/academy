@@ -1,20 +1,23 @@
-import type { Metadata } from "next";
+import { pageMeta, coursesItemListSchema, jsonLd } from "@/lib/seo";
 import { programs } from "@/lib/data";
 import { PageHero } from "@/components/page-hero";
 import { ButtonGhost, ButtonPrimary, Pill } from "@/components/ui";
 import { Check } from "@/components/icons";
 import { CtaBand } from "@/components/cta-band";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "AI Courses in Pondicherry — Foundations, AI Engineering & Startup Builder",
   description:
     "Explore AGS AI Academy's AI courses in Pondicherry: AI Foundations (12 weeks), Professional AI Engineer (24 weeks) with LangChain, RAG & AI Agents, and AI Startup Builder. EMI available.",
-};
+  path: "/courses",
+});
 
 export default function CoursesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(coursesItemListSchema())} />
       <PageHero
+        crumbs={[{ name: "Home", path: "/" }, { name: "Courses" }]}
         pill="Courses"
         title="Programs engineered for"
         accent="one outcome: you, shipping AI."

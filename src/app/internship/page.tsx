@@ -1,20 +1,22 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { internshipTracks, internshipWork, internshipBenefits } from "@/lib/data";
 import { PageHero } from "@/components/page-hero";
 import { ButtonGhost, ButtonPrimary, SectionHead } from "@/components/ui";
 import { FeatureIcon, Check } from "@/components/icons";
 import { CtaBand } from "@/components/cta-band";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "AI Internship in Pondicherry — Real Projects, Real Experience",
   description:
     "AGS AI Academy's AI Internship Program in Pondicherry: work on real client projects, internal products and open source. Four tracks — AI Development, Full Stack AI, AI Automation, AI Product Management.",
-};
+  path: "/internship",
+});
 
 export default function InternshipPage() {
   return (
     <>
       <PageHero
+        crumbs={[{ name: "Home", path: "/" }, { name: "AI Internship" }]}
         pill="AI Internship Program"
         title="The internship where you"
         accent="actually ship."

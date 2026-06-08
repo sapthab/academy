@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
 import { getAllBlogPosts } from "@/lib/blogger";
+import { pageMeta, SITE_URL, canonical } from "@/lib/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { BlogListing } from "./blog-listing";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Blog — AI Tutorials, Career Advice & Insights",
   description:
     "The AGS AI Academy blog: hands-on AI tutorials, career guidance, and insights on building with AI — from Puducherry's build-first AI academy, part of AgileSoftLabs.",
-  alternates: { canonical: "https://agsacademy.in/blog" },
-};
+  path: "/blog",
+});
 
 export default async function BlogPage() {
   const posts = await getAllBlogPosts();
@@ -30,11 +30,8 @@ export default async function BlogPage() {
     "@type": "Blog",
     name: "AGS AI Academy Blog",
     description: "AI tutorials, career advice and insights from AGS AI Academy, Puducherry.",
-    url: "https://agsacademy.in/blog",
-    publisher: {
-      "@type": "Organization",
-      name: "AGS AI Academy",
-    },
+    url: canonical("/blog"),
+    publisher: { "@type": "Organization", name: "AGS AI Academy", "@id": `${SITE_URL}/#organization` },
     blogPost: posts.slice(0, 10).map((p) => ({
       "@type": "BlogPosting",
       headline: p.title.replace(/<[^>]*>/g, ""),
@@ -42,7 +39,7 @@ export default async function BlogPage() {
       dateModified: p.updated,
       author: { "@type": "Person", name: p.author.name },
       image: p.thumbnail.startsWith("data:") ? undefined : p.thumbnail,
-      url: `https://agsacademy.in/blog/${p.slug}`,
+      url: canonical(`/blog/${p.slug}`),
     })),
   };
 
@@ -53,6 +50,7 @@ export default async function BlogPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
       />
       <PageHero
+        crumbs={[{ name: "Home", path: "/" }, { name: "Blog" }]}
         pill="Blog"
         title="Learn something"
         accent="buildable, every week."

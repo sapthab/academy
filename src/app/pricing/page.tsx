@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMeta, coursesItemListSchema, jsonLd } from "@/lib/seo";
 import { programs } from "@/lib/data";
 import { PageHero } from "@/components/page-hero";
 import { ButtonPrimary, SectionHead } from "@/components/ui";
@@ -6,11 +6,12 @@ import { Check } from "@/components/icons";
 import { CtaBand } from "@/components/cta-band";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Pricing — AI Course Fees in Pondicherry with 0% EMI",
   description:
     "Transparent AI course fees at AGS AI Academy Pondicherry: AI Foundations ₹15,000, Professional AI Engineer ₹49,000, AI Startup Builder ₹99,000. 0% EMI and scholarships available.",
-};
+  path: "/pricing",
+});
 
 const included = [
   "Mentor-led live sessions",
@@ -29,7 +30,9 @@ export default function PricingPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(coursesItemListSchema())} />
       <PageHero
+        crumbs={[{ name: "Home", path: "/" }, { name: "Pricing" }]}
         pill="Pricing"
         title="Transparent fees."
         accent="Zero hidden costs."
