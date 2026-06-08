@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 
 const base = "https://agsacademy.in";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
