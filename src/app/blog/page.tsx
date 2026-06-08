@@ -7,7 +7,7 @@ import { CtaBand } from "@/components/cta-band";
 export const metadata: Metadata = {
   title: "Blog — AI Tutorials, Career Advice & Student Projects",
   description:
-    "Learn AI with AGS Academy's blog: hands-on tutorials on RAG, AI agents and MCP servers, career roadmaps for AI engineers in India, and student project deep-dives.",
+    "Learn AI with AGS AI Academy's blog: hands-on tutorials on RAG, AI agents and MCP servers, career roadmaps for AI engineers in India, and student project deep-dives.",
 };
 
 export default function BlogPage() {

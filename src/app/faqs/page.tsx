@@ -7,7 +7,7 @@ import { faqs } from "@/lib/data";
 export const metadata: Metadata = {
   title: "FAQs — Admissions, Programs, Internships & Fees",
   description:
-    "Answers to common questions about AGS Academy Pondicherry: admissions process, coding prerequisites, internship guarantees, placement support, fees, EMI and refunds.",
+    "Answers to common questions about AGS AI Academy Pondicherry: admissions process, coding prerequisites, internship guarantees, placement support, fees, EMI and refunds.",
 };
 
 export default function FaqsPage() {

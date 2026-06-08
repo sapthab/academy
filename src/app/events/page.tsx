@@ -8,7 +8,7 @@ import { CtaBand } from "@/components/cta-band";
 export const metadata: Metadata = {
   title: "Events & Workshops — AI Bootcamps, Hackathons & Demo Days in Pondicherry",
   description:
-    "Join AGS Academy's AI events in Pondicherry: hands-on AI agent workshops, the Pondy AI Hackathon, GenAI bootcamps and student demo days. Free registration.",
+    "Join AGS AI Academy's AI events in Pondicherry: hands-on AI agent workshops, the Pondy AI Hackathon, GenAI bootcamps and student demo days. Free registration.",
 };
 
 const typeStyles: Record<string, string> = {

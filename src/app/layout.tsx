@@ -27,11 +27,11 @@ const chakra = Chakra_Petch({
 export const metadata: Metadata = {
   metadataBase: new URL("https://agsacademy.in"),
   title: {
-    default: "AGS Academy — AI Course in Pondicherry | Learn AI By Building Real Products",
-    template: "%s | AGS Academy Pondicherry",
+    default: "AGS AI Academy — AI Course in Pondicherry | Learn AI By Building Real Products",
+    template: "%s | AGS AI Academy Pondicherry",
   },
   description:
-    "AGS Academy is Puducherry's hands-on AI academy. Become an AI Engineer through real client projects, AI internships, startup incubation and mentorship. Artificial Intelligence training in Pondicherry with placement assistance.",
+    "AGS AI Academy is Puducherry's hands-on AI academy. Become an AI Engineer through real client projects, AI internships, startup incubation and mentorship. Artificial Intelligence training in Pondicherry with placement assistance.",
   keywords: [
     "AI Course in Pondicherry",
     "Artificial Intelligence Training Pondicherry",
@@ -42,19 +42,19 @@ export const metadata: Metadata = {
     "Machine Learning Course Pondicherry",
   ],
   openGraph: {
-    title: "AGS Academy — Learn AI By Building Real Products",
+    title: "AGS AI Academy — Learn AI By Building Real Products",
     description:
       "Become an AI Engineer through real-world projects, internships, and mentorship in Puducherry.",
     type: "website",
     locale: "en_IN",
-    siteName: "AGS Academy",
+    siteName: "AGS AI Academy",
   },
 };
 
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  name: "AGS Academy",
+  name: "AGS AI Academy",
   description:
     "Puducherry's build-first AI academy — AI courses, internships, startup incubation and placement assistance.",
   url: "https://agsacademy.in",

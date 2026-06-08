@@ -9,7 +9,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Pricing — AI Course Fees in Pondicherry with 0% EMI",
   description:
-    "Transparent AI course fees at AGS Academy Pondicherry: AI Foundations ₹15,000, Professional AI Engineer ₹49,000, AI Startup Builder ₹99,000. 0% EMI and scholarships available.",
+    "Transparent AI course fees at AGS AI Academy Pondicherry: AI Foundations ₹15,000, Professional AI Engineer ₹49,000, AI Startup Builder ₹99,000. 0% EMI and scholarships available.",
 };
 
 const included = [

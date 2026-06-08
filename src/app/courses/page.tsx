@@ -8,7 +8,7 @@ import { CtaBand } from "@/components/cta-band";
 export const metadata: Metadata = {
   title: "AI Courses in Pondicherry — Foundations, AI Engineering & Startup Builder",
   description:
-    "Explore AGS Academy's AI courses in Pondicherry: AI Foundations (12 weeks), Professional AI Engineer (24 weeks) with LangChain, RAG & AI Agents, and AI Startup Builder. EMI available.",
+    "Explore AGS AI Academy's AI courses in Pondicherry: AI Foundations (12 weeks), Professional AI Engineer (24 weeks) with LangChain, RAG & AI Agents, and AI Startup Builder. EMI available.",
 };
 
 export default function CoursesPage() {

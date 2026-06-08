@@ -7,7 +7,7 @@ import { FeatureIcon, Check } from "@/components/icons";
 export const metadata: Metadata = {
   title: "About Us — Puducherry's Build-First AI Academy",
   description:
-    "AGS Academy's mission: equip students with practical AI skills that translate into real-world opportunities. Meet the team behind Puducherry's leading AI academy.",
+    "AGS AI Academy's mission: equip students with practical AI skills that translate into real-world opportunities. Meet the team behind Puducherry's leading AI academy.",
 };
 
 const values = [
@@ -44,10 +44,10 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        pill="About AGS Academy"
+        pill="About AGS AI Academy"
         title="We exist to close the gap between"
         accent="degrees and careers."
-        body="Every year, lakhs of students graduate with theory and no proof of skill. AGS Academy was built to fix that — with real projects, real internships and real outcomes."
+        body="Every year, lakhs of students graduate with theory and no proof of skill. AGS AI Academy was built to fix that — with real projects, real internships and real outcomes."
       />
 
       {/* Mission / Vision */}
@@ -109,7 +109,7 @@ export default function AboutPage() {
               pill="Founder"
               title="Built by an engineer"
               accent="who hires engineers."
-              body="AGS Academy was founded on a simple frustration: interviewing hundreds of graduates who could recite algorithms but couldn't build anything."
+              body="AGS AI Academy was founded on a simple frustration: interviewing hundreds of graduates who could recite algorithms but couldn't build anything."
             />
             <ul className="mt-8 space-y-3.5">
               {founderPoints.map((p) => (

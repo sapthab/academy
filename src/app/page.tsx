@@ -212,7 +212,7 @@ function WhySection() {
     <section className="px-5 py-24 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <SectionHead
-          pill="Why AGS Academy"
+          pill="Why AGS AI Academy"
           title="Not a training institute."
           accent="A product studio you learn inside."
           body="Traditional institutes teach syllabus. We run real AI projects — and train you by putting you on them."
@@ -390,7 +390,7 @@ function ProjectsSection() {
               <span className="font-tech font-semibold text-crimson">Running in production.</span>
             </h2>
             <p className="mt-4 max-w-xl text-[15.5px] leading-relaxed text-white/60">
-              Every project below was shipped by AGS Academy students for real
+              Every project below was shipped by AGS AI Academy students for real
               users — with the metrics to prove it.
             </p>
           </div>

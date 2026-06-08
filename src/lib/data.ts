@@ -1,5 +1,5 @@
 export const site = {
-  name: "AGS Academy",
+  name: "AGS AI Academy",
   tagline: "Learn AI By Building Real Products",
   phone: "+91 90000 00000",
   whatsapp: "https://wa.me/919000000000",
@@ -344,7 +344,7 @@ export const internshipTracks = [
 ];
 
 export const internshipWork = [
-  { title: "Internal Products", body: "Work on AGS Academy's own AI tools used by hundreds of students." },
+  { title: "Internal Products", body: "Work on AGS AI Academy's own AI tools used by hundreds of students." },
   { title: "Client Projects", body: "Real deliverables for real businesses — with deadlines, standups and code review." },
   { title: "Open Source", body: "Contribute to AI open source projects and build a public engineering reputation." },
   { title: "Startup Projects", body: "Join incubation-track startups as early team members building MVPs." },
@@ -431,7 +431,7 @@ export const testimonials = [
   },
   {
     quote:
-      "We've hired from AGS Academy twice now. Their interns commit production code in week one — that's not normal for freshers.",
+      "We've hired from AGS AI Academy twice now. Their interns commit production code in week one — that's not normal for freshers.",
     name: "Lakshmi Venkat",
     role: "CTO, SaaS startup (Chennai)",
   },
@@ -531,7 +531,7 @@ export const events: Event[] = [
     type: "Workshop",
     date: "June 14, 2026",
     time: "10:00 AM – 1:00 PM",
-    location: "AGS Academy Campus, Puducherry",
+    location: "AGS AI Academy Campus, Puducherry",
     description:
       "Hands-on workshop: build and deploy a working AI agent with tool use in 3 hours. Bring a laptop, leave with a live demo link.",
     seats: "40 seats",
@@ -543,7 +543,7 @@ export const events: Event[] = [
     type: "Hackathon",
     date: "June 27–28, 2026",
     time: "48 hours",
-    location: "AGS Academy Campus, Puducherry",
+    location: "AGS AI Academy Campus, Puducherry",
     description:
       "48 hours, real problem statements from local businesses, ₹1,00,000 prize pool. Top teams get incubation track interviews.",
     seats: "120 builders",
@@ -567,7 +567,7 @@ export const events: Event[] = [
     type: "Demo Day",
     date: "July 25, 2026",
     time: "4:00 PM – 7:00 PM",
-    location: "AGS Academy Campus, Puducherry",
+    location: "AGS AI Academy Campus, Puducherry",
     description:
       "Batch 9 presents their capstone products to hiring partners, investors and the Pondy tech community. Open to recruiters.",
     seats: "Open invite",
@@ -593,7 +593,7 @@ export const faqs: { q: string; a: string; group: string }[] = [
   },
   {
     group: "Programs",
-    q: "How is AGS Academy different from other AI courses?",
+    q: "How is AGS AI Academy different from other AI courses?",
     a: "We are a build-first academy. From week one you work on real products — client projects, internal tools, open source — not toy datasets. You graduate with deployed projects, an internship, and a GitHub portfolio, not just a certificate.",
   },
   {

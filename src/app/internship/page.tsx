@@ -8,7 +8,7 @@ import { CtaBand } from "@/components/cta-band";
 export const metadata: Metadata = {
   title: "AI Internship in Pondicherry — Real Projects, Real Experience",
   description:
-    "AGS Academy's AI Internship Program in Pondicherry: work on real client projects, internal products and open source. Four tracks — AI Development, Full Stack AI, AI Automation, AI Product Management.",
+    "AGS AI Academy's AI Internship Program in Pondicherry: work on real client projects, internal products and open source. Four tracks — AI Development, Full Stack AI, AI Automation, AI Product Management.",
 };
 
 export default function InternshipPage() {
@@ -160,7 +160,7 @@ export default function InternshipPage() {
 
       <CtaBand
         title="Internships are earned here — and everyone gets the chance to earn one."
-        body="Every AGS Academy program routes into the internship track. Apply, pick your program, and start building."
+        body="Every AGS AI Academy program routes into the internship track. Apply, pick your program, and start building."
       />
     </>
   );

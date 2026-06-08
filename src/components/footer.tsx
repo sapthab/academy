@@ -44,7 +44,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2.5">
               <Logo className="size-9" />
               <span className="font-display text-xl font-bold tracking-tight">
-                AGS<span className="text-crimson"> Academy</span>
+                AGS <span className="text-crimson">AI</span> Academy
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-[14.5px] leading-relaxed text-ink-soft">
@@ -95,7 +95,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-line pt-7 sm:flex-row sm:items-center">
           <p className="text-[13px] text-ink-soft">
-            © {new Date().getFullYear()} AGS Academy, Puducherry. All rights reserved.
+            © {new Date().getFullYear()} AGS AI Academy, Puducherry. All rights reserved.
           </p>
           <p className="font-tech text-[11px] uppercase tracking-[0.16em] text-ink/40">
             Learn · Build · Intern · Launch · Get Hired

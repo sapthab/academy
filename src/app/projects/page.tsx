@@ -6,7 +6,7 @@ import { ProjectsGrid } from "./projects-grid";
 export const metadata: Metadata = {
   title: "Student Projects Portfolio — AI Agents, LLM Apps & Automation",
   description:
-    "Explore real AI products built by AGS Academy students in Pondicherry: customer support agents, RAG systems, voice assistants, automation tools and SaaS — all in production.",
+    "Explore real AI products built by AGS AI Academy students in Pondicherry: customer support agents, RAG systems, voice assistants, automation tools and SaaS — all in production.",
 };
 
 export default function ProjectsPage() {

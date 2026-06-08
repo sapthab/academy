@@ -8,7 +8,7 @@ import { CtaBand } from "@/components/cta-band";
 export const metadata: Metadata = {
   title: "Success Stories — Placements, Startups & Career Transformations",
   description:
-    "Real AGS Academy student outcomes: placements at Zoho, TCS and Freshworks, startup launches, and career restarts. Before-and-after journeys from Puducherry's AI academy.",
+    "Real AGS AI Academy student outcomes: placements at Zoho, TCS and Freshworks, startup launches, and career restarts. Before-and-after journeys from Puducherry's AI academy.",
 };
 
 export default function SuccessStoriesPage() {

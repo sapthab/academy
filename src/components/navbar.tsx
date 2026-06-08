@@ -36,7 +36,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <Logo className="size-8" />
           <span className="font-display text-[19px] font-bold tracking-tight">
-            AGS<span className="text-crimson"> Academy</span>
+            AGS <span className="text-crimson">AI</span> Academy
           </span>
         </Link>
 
