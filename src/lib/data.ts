@@ -365,81 +365,79 @@ export const internshipBenefits = [
   "Placement References",
 ];
 
-export type Story = {
+export type StudentReview = {
   name: string;
-  role: string;
-  company: string;
-  before: string;
-  after: string;
+  focus: string;
   quote: string;
-  program: string;
-  hike?: string;
 };
 
-export const stories: Story[] = [
+// Real intern reviews from AgileSoftLabs / AGS AI Academy (summarized).
+export const studentReviews: StudentReview[] = [
   {
-    name: "Priya Raghavan",
-    role: "AI Engineer",
-    company: "Zoho",
-    before: "Final-year ECE student, no coding background",
-    after: "AI Engineer at Zoho, ₹9.2 LPA",
+    name: "Kaviraj",
+    focus: "Real-Time Projects",
     quote:
-      "I joined knowing only C basics from college. Eight months later I was demoing a RAG system I built for a real client in my Zoho interview. They stopped asking questions and asked when I could start.",
-    program: "Professional AI Engineer",
-    hike: "Fresher → ₹9.2 LPA",
+      "A truly enriching experience. I got to work on real-time projects that let me apply my knowledge and gain valuable hands-on skills. The team was incredibly supportive — everyone was approachable and always ready to help.",
   },
   {
-    name: "Mohan Vetri",
-    role: "Founder",
-    company: "BillSense AI",
-    before: "Mechanical engineer at a manufacturing unit",
-    after: "Founder of an AI invoicing startup with paying customers",
+    name: "Kesaba Barik",
+    focus: "Industry Tools & Tech",
     quote:
-      "The Startup Builder track forced me to talk to 40 customers before writing code. My MVP launched in week 14 and got its first paying customer in week 16. That sequence — discovery first — changed everything.",
-    program: "AI Startup Builder",
+      "An incredibly rewarding internship. The team was supportive and knowledgeable, guiding me on real-world projects. I gained practical experience with industry tools and technologies in a collaborative environment that sharpened both my technical and soft skills.",
   },
   {
-    name: "Divya Subramanian",
-    role: "GenAI Developer",
-    company: "TCS",
-    before: "2019 graduate, 4-year career gap",
-    after: "GenAI Developer at TCS, Chennai",
+    name: "Murugadoss",
+    focus: "AI & Web Development",
     quote:
-      "After a career break I was invisible to recruiters. The portfolio changed that — six deployed projects with live demos. Interviewers spent the whole time asking about my work instead of my gap.",
-    program: "Professional AI Engineer",
-    hike: "Career restart",
+      "I learned various AI technologies and gained practical knowledge by working on real-time projects. The mentors gave clear guidance whenever needed, improving my skills in AI, web development and project implementation. A professional, friendly and encouraging place to grow.",
   },
   {
-    name: "Karthik Narayanan",
-    role: "Automation Lead",
-    company: "Freshworks",
-    before: "Support engineer doing repetitive manual work",
-    after: "Automation Lead, 2.4× salary hike",
+    name: "Suvetha A",
+    focus: "AI Concepts & Hands-On Work",
     quote:
-      "I automated my old job as my course project — literally. The agent pipeline I built handled the workflows my team did manually. Freshworks hired me to do the same thing for them.",
-    program: "Professional AI Engineer",
-    hike: "2.4× salary hike",
-  },
-];
-
-export const testimonials = [
-  {
-    quote:
-      "The difference is simple: other institutes show you slides, AGS gives you a Jira board and a client. My students' GitHub profiles look like working engineers'.",
-    name: "Suresh Kumar",
-    role: "Engineering Manager, hired 3 AGS grads",
+      "A great place to gain practical experience in AI concepts and real-time projects. The environment was friendly and supportive, with good guidance throughout — very helpful for building skills and getting hands-on with industry-based work.",
   },
   {
+    name: "Yuvasri G",
+    focus: "AI & Real-Time Development",
     quote:
-      "Best decision of my college life. While my classmates collected certificates, I collected deployed projects. Got placed before my final semester ended.",
-    name: "Sneha Patel",
-    role: "AI Foundations → Professional Track, Batch 7",
+      "A great learning experience. The mentors are very supportive and guide interns in a friendly way. I'm learning new technologies including Artificial Intelligence and real-time development skills, which is building my technical knowledge and confidence for my IT career.",
   },
   {
+    name: "Siva Ranjani",
+    focus: "AI & Software Development",
     quote:
-      "We've hired from AGS AI Academy twice now. Their interns commit production code in week one — that's not normal for freshers.",
-    name: "Lakshmi Venkat",
-    role: "CTO, SaaS startup (Chennai)",
+      "Great exposure to modern technologies, especially Artificial Intelligence and real-time applications. The mentors guide you step by step, which makes it easy for beginners. I worked on practical projects and improved my AI and development skills in a friendly, motivating environment. Highly recommended for students building a career in AI.",
+  },
+  {
+    name: "K. Ramachandran",
+    focus: "Mentorship & Project Exposure",
+    quote:
+      "Excellent place for an IT internship — hands-on project exposure, strong mentorship, and a flexible yet professional environment. I learned far more than I expected, and the team truly values intern growth. Highly recommended for anyone starting out in tech.",
+  },
+  {
+    name: "Surendhar T",
+    focus: "AI & Real-Time Projects",
+    quote:
+      "A great experience. The team is supportive and encouraging, and I'm learning a lot through real-time projects. I'm also gaining hands-on experience in AI, which is enhancing my technical skills and knowledge.",
+  },
+  {
+    name: "Shoubi",
+    focus: "AI Concepts & Skill Building",
+    quote:
+      "A friendly and supportive environment with good facilities. I was given real responsibilities that helped me learn new skills, with great opportunities to explore AI concepts and many platforms to improve my knowledge. A great place for beginners to gain experience.",
+  },
+  {
+    name: "Mohamed Magaroos",
+    focus: "Full Stack, Security & Cloud",
+    quote:
+      "An amazing opportunity. The staff was very cooperative and gave me exposure to full stack development, cyber security, cloud technologies and live projects. I built a secure file-sharing system using the latest technologies, with extremely helpful mentors throughout.",
+  },
+  {
+    name: "V. Thiruvasanth",
+    focus: "Full-Stack & Real-Time Apps",
+    quote:
+      "An extremely enriching experience that improved my technical proficiency, project-development knowledge and confidence with real-time applications. I got proper guidance on my tourism platform project while learning full-stack development — a friendly, practical learning culture with real industry exposure.",
   },
 ];
 

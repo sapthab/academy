@@ -7,7 +7,7 @@ import {
   journey,
   projects,
   techStack,
-  testimonials,
+  studentReviews,
 } from "@/lib/data";
 import { ButtonGhost, ButtonPrimary, Chip, Pill, SectionHead } from "@/components/ui";
 import { ArrowRight, FeatureIcon, Spark, Check } from "@/components/icons";
@@ -600,11 +600,11 @@ function TestimonialsSection() {
       <div className="mx-auto max-w-7xl">
         <SectionHead
           pill="Testimonials"
-          title="Students and employers"
-          accent="say it best."
+          title="What our interns"
+          accent="actually say."
         />
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
-          {testimonials.map((t, i) => (
+          {studentReviews.slice(0, 3).map((t, i) => (
             <figure
               key={t.name}
               className="reveal lift flex flex-col rounded-3xl border border-line bg-surface p-8"
@@ -616,7 +616,9 @@ function TestimonialsSection() {
               </blockquote>
               <figcaption className="mt-6 border-t border-line pt-5">
                 <p className="font-display text-[15px] font-bold">{t.name}</p>
-                <p className="mt-0.5 text-[12.5px] text-ink-soft">{t.role}</p>
+                <p className="mt-0.5 text-[12.5px] text-ink-soft">
+                  AGS AI Academy Intern · {t.focus}
+                </p>
               </figcaption>
             </figure>
           ))}
