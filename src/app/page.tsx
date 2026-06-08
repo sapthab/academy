@@ -505,8 +505,8 @@ function ProjectsSection() {
               <span className="font-tech font-semibold text-crimson">Running in production.</span>
             </h2>
             <p className="mt-4 max-w-xl text-[15.5px] leading-relaxed text-white/60">
-              Every project below was shipped by AGS AI Academy students for real
-              users — with the metrics to prove it.
+              Real capstone and internship projects shipped by AGS AI Academy
+              students — AI agents, automation, cyber security and cloud SaaS.
             </p>
           </div>
           <Link
@@ -519,21 +519,25 @@ function ProjectsSection() {
         </div>
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p, i) => (
+          {projects.filter((p) => p.featured).slice(0, 6).map((p, i) => (
             <Link
               key={p.slug}
               href="/projects"
-              className="reveal group rounded-3xl border border-white/10 bg-white/[0.04] p-7 transition-all hover:-translate-y-1 hover:border-crimson/50 hover:bg-white/[0.07]"
+              className="reveal group flex flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-7 transition-all hover:-translate-y-1 hover:border-crimson/50 hover:bg-white/[0.07]"
               style={{ transitionDelay: `${(i % 3) * 80}ms` }}
             >
               <div className="flex items-center justify-between">
                 <span className="font-tech rounded-full bg-crimson/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-rose-soft">
                   {p.category}
                 </span>
-                <ArrowRight className="size-4 text-white/30 transition-all group-hover:translate-x-1 group-hover:text-crimson" />
+                {p.placed && (
+                  <span className="font-tech inline-flex items-center gap-1 rounded-full bg-emerald-400/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-emerald-400">
+                    <Check className="size-3" /> Placed
+                  </span>
+                )}
               </div>
               <h3 className="font-display mt-5 text-[19px] font-bold leading-snug">{p.name}</h3>
-              <p className="mt-2.5 text-[13.5px] leading-relaxed text-white/55">{p.description}</p>
+              <p className="mt-2.5 flex-1 text-[13.5px] leading-relaxed text-white/55">{p.description}</p>
               <div className="mt-5 flex flex-wrap gap-1.5">
                 {p.tech.map((t) => (
                   <span
@@ -544,14 +548,17 @@ function ProjectsSection() {
                   </span>
                 ))}
               </div>
-              <div className="mt-6 flex items-end justify-between border-t border-white/10 pt-5">
-                <div>
-                  <p className="font-tech text-2xl font-bold text-crimson">{p.metric}</p>
-                  <p className="text-[11px] text-white/45">{p.metricLabel}</p>
+              <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-5">
+                <div className="flex items-center gap-2.5">
+                  <span className="font-display flex size-8 items-center justify-center rounded-full bg-crimson text-[11px] font-bold text-white">
+                    {p.student.charAt(0)}
+                  </span>
+                  <div>
+                    <p className="text-[12.5px] font-semibold leading-tight">{p.student}</p>
+                    <p className="text-[10.5px] text-white/40">{p.placed || "Student Project"}</p>
+                  </div>
                 </div>
-                <p className="text-right text-[11px] text-white/40">
-                  by {p.students.join(" & ")}
-                </p>
+                <ArrowRight className="size-4 text-white/30 transition-all group-hover:translate-x-1 group-hover:text-crimson" />
               </div>
             </Link>
           ))}

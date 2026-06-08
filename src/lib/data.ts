@@ -210,93 +210,225 @@ export const journey = [
   },
 ];
 
+export type ProjectCategory =
+  | "AI Agents"
+  | "Automation"
+  | "Cyber Security"
+  | "Cloud & SaaS"
+  | "Blockchain";
+
 export type Project = {
   slug: string;
   name: string;
-  category: "AI Agents" | "LLM Apps" | "Automation" | "SaaS" | "Blockchain AI";
+  category: ProjectCategory;
   description: string;
   tech: string[];
-  students: string[];
-  metric: string;
-  metricLabel: string;
+  student: string;
+  placed?: string;
+  featured?: boolean;
 };
 
+// Real capstone & internship projects built by AGS AI Academy students.
 export const projects: Project[] = [
   {
-    slug: "ai-customer-support-agent",
-    name: "AI Customer Support Agent",
-    category: "AI Agents",
-    description:
-      "Autonomous support agent handling 80% of tickets for a D2C brand — RAG over help docs, order lookups via tools, and human handoff.",
-    tech: ["LangChain", "GPT-4o", "Pinecone", "Next.js"],
-    students: ["Priya R.", "Arjun K."],
-    metric: "80%",
-    metricLabel: "tickets auto-resolved",
-  },
-  {
-    slug: "ai-resume-builder",
-    name: "AI Resume Builder",
-    category: "LLM Apps",
-    description:
-      "Generates ATS-optimized resumes from a conversational interview, with role-targeted rewriting and PDF export. 2,000+ resumes generated.",
-    tech: ["Claude API", "React", "Tailwind", "Supabase"],
-    students: ["Divya S.", "Mohan V."],
-    metric: "2,000+",
-    metricLabel: "resumes generated",
-  },
-  {
-    slug: "ai-marketing-automation",
-    name: "AI Marketing Automation Tool",
+    slug: "instagram-competitor-idea-scraper",
+    name: "Instagram Competitor Idea Scraper",
     category: "Automation",
     description:
-      "Multi-agent pipeline that drafts, schedules and A/B tests social campaigns for a local agency — cut campaign production time by 70%.",
-    tech: ["CrewAI", "Python", "Meta API", "Postgres"],
-    students: ["Karthik N.", "Sneha P."],
-    metric: "70%",
-    metricLabel: "faster campaign production",
+      "An automation tool that mines competitor Instagram content to surface high-performing post ideas, hooks and trends — giving marketers a steady content pipeline.",
+    tech: ["Python", "Playwright", "LLMs", "PostgreSQL"],
+    student: "Lerin",
+    placed: "Qualcomm · Internship",
+    featured: true,
   },
   {
-    slug: "ai-voice-assistant",
-    name: "AI Voice Assistant",
+    slug: "video-to-reels-generator",
+    name: "Video-to-Reels Generator",
+    category: "Automation",
+    description:
+      "An AI pipeline that clips long-form videos into short reels and auto-generates synced subtitles — turning one upload into a week of social content.",
+    tech: ["Python", "Whisper", "FFmpeg", "MoviePy"],
+    student: "Kesaba",
+    placed: "Excelcom · Internship",
+    featured: true,
+  },
+  {
+    slug: "youtube-shorts-idea-scraper",
+    name: "YouTube Shorts Idea Scraper",
+    category: "Automation",
+    description:
+      "An automation that analyses competing YouTube Shorts to extract winning formats, titles and trending ideas for creators and brands.",
+    tech: ["Python", "YouTube API", "LLMs", "PostgreSQL"],
+    student: "Karthiga",
+    placed: "LMTEQ · Internship",
+    featured: true,
+  },
+  {
+    slug: "instagram-warm-lead-scraper",
+    name: "Instagram Warm Lead Scraper",
+    category: "Automation",
+    description:
+      "A lead-generation agent that identifies and qualifies warm prospects from Instagram engagement signals, ready for sales outreach.",
+    tech: ["Python", "Playwright", "LLMs", "FastAPI"],
+    student: "Logitha",
+    placed: "Capgemini",
+    featured: true,
+  },
+  {
+    slug: "netguard-ai-anomaly-detection",
+    name: "NetGuard AI — Network Anomaly Detection",
+    category: "Cyber Security",
+    description:
+      "A machine-learning system that monitors network traffic in real time and flags intrusions and anomalies before they escalate into breaches.",
+    tech: ["Python", "Scikit-learn", "Suricata", "FastAPI"],
+    student: "Praveen",
+    featured: true,
+  },
+  {
+    slug: "blockchain-online-voting",
+    name: "Blockchain Online Voting System",
+    category: "Blockchain",
+    description:
+      "A tamper-proof online voting platform on blockchain — every vote is immutable, auditable and verifiable end to end.",
+    tech: ["Solidity", "Ethereum", "Web3.js", "React"],
+    student: "Ramachandran K",
+    featured: true,
+  },
+  {
+    slug: "intelligent-recruitment-automation",
+    name: "Intelligent Recruitment Automation",
     category: "AI Agents",
     description:
-      "Tamil + English voice assistant for a clinic's appointment line — speech-to-speech with real-time booking and reminders.",
-    tech: ["Whisper", "ElevenLabs", "FastAPI", "Twilio"],
-    students: ["Rahul D."],
-    metric: "1,200+",
-    metricLabel: "calls handled monthly",
+      "An AI hiring assistant that screens resumes, ranks candidates and automates interview scheduling — cutting manual shortlisting effort for recruiters.",
+    tech: ["Python", "LLMs", "FastAPI", "React"],
+    student: "Gowtham K",
   },
   {
-    slug: "ai-legal-research-bot",
-    name: "AI Legal Research Bot",
-    category: "LLM Apps",
+    slug: "bias-free-interview-evaluation",
+    name: "Bias-Free AI Interview Evaluation",
+    category: "AI Agents",
     description:
-      "Case-law research copilot for a Chennai law firm — citation-grounded answers over 50k judgments with paragraph-level sources.",
-    tech: ["RAG", "Qdrant", "LlamaIndex", "Next.js"],
-    students: ["Ananya M.", "Vikram S."],
-    metric: "50k",
-    metricLabel: "judgments indexed",
+      "An AI evaluator that scores interview performance objectively across skills and communication — removing human bias from candidate assessment.",
+    tech: ["Python", "LLMs", "Whisper", "FastAPI"],
+    student: "Murugadass",
   },
   {
-    slug: "ai-healthcare-assistant",
-    name: "AI Healthcare Assistant",
-    category: "SaaS",
+    slug: "faq-chatbot-agent",
+    name: "FAQ Chatbot Agent",
+    category: "AI Agents",
     description:
-      "Patient-intake and triage assistant deployed at two clinics — multilingual symptom capture with structured summaries for doctors.",
-    tech: ["Claude API", "React Native", "FHIR", "AWS"],
-    students: ["Deepak R.", "Lakshmi K."],
-    metric: "2",
-    metricLabel: "clinics in production",
+      "A retrieval-augmented chatbot that answers customer questions from a knowledge base with grounded, source-cited responses.",
+    tech: ["LangChain", "OpenAI", "Pinecone", "Next.js"],
+    student: "Kavinila",
+  },
+  {
+    slug: "instagram-ai-dm-generator",
+    name: "Instagram AI DM Generator",
+    category: "AI Agents",
+    description:
+      "An AI agent that crafts personalised Instagram direct messages at scale for outreach and engagement campaigns.",
+    tech: ["Python", "LLMs", "Playwright", "FastAPI"],
+    student: "Abbargithan",
+  },
+  {
+    slug: "self-healing-cloud-infrastructure",
+    name: "Self-Healing Cloud Infrastructure",
+    category: "Automation",
+    description:
+      "An adaptive, multi-level system that detects infrastructure failures and auto-remediates them in real time — keeping services online without manual intervention.",
+    tech: ["Kubernetes", "Python", "Prometheus", "Ansible"],
+    student: "Shoubiya M",
+  },
+  {
+    slug: "ai-workflow-automation",
+    name: "AI Workflow Automation Suite",
+    category: "Automation",
+    description:
+      "An AI automation suite that connects tools and agents to run repetitive business workflows end to end with minimal human input.",
+    tech: ["Python", "LangChain", "n8n", "FastAPI"],
+    student: "Kaviraj",
+  },
+  {
+    slug: "youtube-competitor-idea-scraper",
+    name: "YouTube Competitor Idea Scraper",
+    category: "Automation",
+    description:
+      "A research agent that studies competitor YouTube channels to surface content gaps and high-potential video ideas.",
+    tech: ["Python", "YouTube API", "LLMs", "PostgreSQL"],
+    student: "Lokeshwari",
+  },
+  {
+    slug: "secure-multimodal-steganography",
+    name: "Secure Multi-Modal Steganography",
+    category: "Cyber Security",
+    description:
+      "An AI-powered system that hides encrypted data across images, audio and text — combining steganography with cryptography for layered secure communication.",
+    tech: ["Python", "OpenCV", "AES", "TensorFlow"],
+    student: "Girija",
+  },
+  {
+    slug: "ai-certificate-verification",
+    name: "AI Certificate Verification (QR + OCR)",
+    category: "Cyber Security",
+    description:
+      "A fraud-proof certificate validator that reads documents with OCR and verifies authenticity through QR codes — instant, tamper-evident verification.",
+    tech: ["Python", "Tesseract OCR", "OpenCV", "Flask"],
+    student: "Suvetha A",
+  },
+  {
+    slug: "secure-cloud-file-sharing",
+    name: "Secure Cloud File Sharing",
+    category: "Cyber Security",
+    description:
+      "A cloud file-sharing platform with end-to-end encryption, AI-driven threat scanning and automated access controls for safe collaboration.",
+    tech: ["AWS", "Node.js", "React", "AES"],
+    student: "Mohamed Magaroos",
+  },
+  {
+    slug: "ai-file-integrity-monitoring",
+    name: "AI File Integrity Monitoring",
+    category: "Cyber Security",
+    description:
+      "A security system that continuously monitors critical files and uses AI to detect unauthorised changes and potential tampering in real time.",
+    tech: ["Python", "Hashing", "FastAPI", "SQLite"],
+    student: "Akshaya M",
+  },
+  {
+    slug: "cloudprotect-ai-backup-saas",
+    name: "CloudProtect AI — Backup & Recovery",
+    category: "Cloud & SaaS",
+    description:
+      "A cloud-based SaaS for automated file backup and disaster recovery, with AI scheduling that protects data and restores it on demand.",
+    tech: ["AWS", "Node.js", "React", "S3"],
+    student: "Surendhar T",
+  },
+  {
+    slug: "student-academic-career-hub",
+    name: "Student Academic & Career Hub",
+    category: "Cloud & SaaS",
+    description:
+      "An all-in-one platform that recommends abroad-education paths and career options to students using AI-driven profiling and guidance.",
+    tech: ["Next.js", "Python", "LLMs", "PostgreSQL"],
+    student: "Yuvasri",
+  },
+  {
+    slug: "cloud-blood-bank-management",
+    name: "Cloud Blood Bank Management",
+    category: "Cloud & SaaS",
+    description:
+      "A cloud platform connecting donors, hospitals and blood banks in real time — tracking inventory and matching urgent requests instantly.",
+    tech: ["React", "Node.js", "MongoDB", "AWS"],
+    student: "Sivaranjani",
   },
 ];
 
 export const projectCategories = [
   "All",
   "AI Agents",
-  "LLM Apps",
   "Automation",
-  "SaaS",
-  "Blockchain AI",
+  "Cyber Security",
+  "Cloud & SaaS",
+  "Blockchain",
 ] as const;
 
 export const techStack: { group: string; items: string[] }[] = [

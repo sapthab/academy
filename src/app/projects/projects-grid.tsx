@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { projects, projectCategories } from "@/lib/data";
-import { ArrowRight } from "@/components/icons";
+import { ArrowRight, Check } from "@/components/icons";
 
 export function ProjectsGrid() {
   const [active, setActive] = useState<string>("All");
@@ -40,14 +40,18 @@ export function ProjectsGrid() {
               <span className="font-tech rounded-full bg-rose-tint px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-crimson-ink">
                 {p.category}
               </span>
-              <span className="font-tech text-[11px] text-ink/35">
-                {p.students.length} student{p.students.length > 1 ? "s" : ""}
-              </span>
+              {p.placed && (
+                <span className="font-tech inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-emerald-600">
+                  <Check className="size-3" /> Placed
+                </span>
+              )}
             </div>
+
             <h3 className="font-display mt-5 text-[19px] font-bold leading-snug">{p.name}</h3>
             <p className="mt-2.5 flex-1 text-[14px] leading-relaxed text-ink-soft">
               {p.description}
             </p>
+
             <div className="mt-5 flex flex-wrap gap-1.5">
               {p.tech.map((t) => (
                 <span
@@ -58,21 +62,21 @@ export function ProjectsGrid() {
                 </span>
               ))}
             </div>
+
             <div className="mt-6 flex items-end justify-between border-t border-line pt-5">
-              <div>
-                <p className="font-tech text-2xl font-bold text-crimson">{p.metric}</p>
-                <p className="text-[11px] text-ink/45">{p.metricLabel}</p>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-flex cursor-pointer items-center gap-1 rounded-full border border-line px-3 py-1.5 text-[11.5px] font-semibold text-ink/60 transition-colors hover:border-crimson/40 hover:text-crimson">
-                  GitHub
+              <div className="flex items-center gap-2.5">
+                <span className="font-display flex size-9 items-center justify-center rounded-full bg-ink text-[12px] font-bold text-white">
+                  {p.student.charAt(0)}
                 </span>
-                <span className="inline-flex cursor-pointer items-center gap-1 rounded-full bg-rose-tint px-3 py-1.5 text-[11.5px] font-semibold text-crimson transition-colors group-hover:bg-crimson group-hover:text-white">
-                  Live Demo <ArrowRight className="size-3" />
-                </span>
+                <div>
+                  <p className="text-[13px] font-semibold leading-tight">{p.student}</p>
+                  <p className="text-[11px] text-ink/45">
+                    {p.placed ? p.placed : "Student Project"}
+                  </p>
+                </div>
               </div>
+              <ArrowRight className="size-4 text-ink/25 transition-all group-hover:translate-x-1 group-hover:text-crimson" />
             </div>
-            <p className="mt-3 text-[11.5px] text-ink/40">Built by {p.students.join(", ")}</p>
           </article>
         ))}
       </div>
