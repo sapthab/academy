@@ -34,11 +34,11 @@ const values = [
   },
 ];
 
-const founderPoints = [
-  "15+ years building software products across India and abroad",
-  "Led AI & automation teams shipping production GenAI systems",
-  "Founded and scaled technology ventures from zero to revenue",
-  "Mentored 100+ engineers from fresher to senior roles",
+const agencyPoints = [
+  "Part of AgileSoftLabs — offices in Puducherry, Dubai & Accra",
+  "Ships across Web3, AI/ML, Cloud, Mobile & IoT",
+  "Builds real AI products — EngageAI, CareSlot AI, StayGrid AI & more",
+  "Mentors are working engineers, not full-time instructors",
 ];
 
 export default function AboutPage() {
@@ -135,39 +135,49 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founder */}
+      {/* Backed by AgileSoftLabs */}
       <section className="bg-surface-warm px-5 py-24 lg:px-8">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="reveal">
-            <div className="relative mx-auto max-w-sm">
+            <a
+              href={site.parent.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative mx-auto block max-w-sm"
+            >
               <div className="aspect-[4/5] overflow-hidden rounded-[2rem] border border-line bg-gradient-to-br from-rose-soft via-surface to-rose-tint">
-                <div className="flex h-full items-center justify-center">
-                  <div className="text-center">
-                    <div className="mx-auto flex size-24 items-center justify-center rounded-full bg-crimson font-display text-4xl font-bold text-white">
-                      A
-                    </div>
-                    <p className="font-tech mt-4 text-[11px] uppercase tracking-[0.2em] text-ink/40">
-                      Founder &amp; Chief Mentor
-                    </p>
-                  </div>
+                <div className="flex h-full flex-col items-center justify-center px-7 text-center">
+                  <p className="font-tech text-[11px] uppercase tracking-[0.2em] text-ink/40">
+                    Our parent agency
+                  </p>
+                  <p className="font-display mt-4 text-[1.7rem] font-bold leading-tight">
+                    AgileSoftLabs
+                  </p>
+                  <p className="mt-2 text-[13.5px] leading-relaxed text-ink-soft">
+                    AI-native software agency building production systems for clients worldwide.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-crimson">
+                    Visit site
+                    <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+                  </span>
                 </div>
               </div>
               <div className="absolute -bottom-5 -right-5 rounded-2xl border border-line bg-surface px-5 py-4 shadow-lg">
-                <p className="font-tech text-xl font-bold text-crimson">15+ yrs</p>
-                <p className="text-[11px] text-ink/50">industry experience</p>
+                <p className="font-tech text-xl font-bold text-crimson">3 countries</p>
+                <p className="text-[11px] text-ink/50">Puducherry · Dubai · Accra</p>
               </div>
-            </div>
+            </a>
           </div>
           <div className="reveal" style={{ transitionDelay: "120ms" }}>
             <SectionHead
               align="left"
-              pill="Founder"
-              title="Built by an engineer"
-              accent="who hires engineers."
-              body="AGS AI Academy was founded on a simple frustration: interviewing hundreds of graduates who could recite algorithms but couldn't build anything."
+              pill="Backed by AgileSoftLabs"
+              title="Built inside a working"
+              accent="AI agency."
+              body="AGS AI Academy isn't run by career trainers — it's run by AgileSoftLabs, a software agency delivering production systems from Puducherry, Dubai and Ghana. The people teaching you ship client work every day."
             />
             <ul className="mt-8 space-y-3.5">
-              {founderPoints.map((p) => (
+              {agencyPoints.map((p) => (
                 <li key={p} className="flex items-start gap-3 text-[15px] text-ink/80">
                   <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-rose-tint">
                     <Check className="size-3.5 text-crimson" />
@@ -176,10 +186,15 @@ export default function AboutPage() {
                 </li>
               ))}
             </ul>
-            <blockquote className="mt-8 rounded-2xl border-l-4 border-crimson bg-surface p-6 text-[15px] italic leading-relaxed text-ink/75">
-              &ldquo;The industry doesn&apos;t hire certificates. It hires people who can
-              ship. So that&apos;s exactly — and only — what we train.&rdquo;
-            </blockquote>
+            <figure className="mt-8">
+              <blockquote className="rounded-2xl border-l-4 border-crimson bg-surface p-6 text-[15px] italic leading-relaxed text-ink/75">
+                &ldquo;The industry doesn&apos;t hire certificates. It hires people who can
+                ship. So that&apos;s exactly — and only — what we train.&rdquo;
+              </blockquote>
+              <figcaption className="font-tech mt-3 text-[12px] uppercase tracking-[0.14em] text-ink/45">
+                — The AgileSoftLabs team
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>

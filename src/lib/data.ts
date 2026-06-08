@@ -15,10 +15,10 @@ export const site = {
 };
 
 export const stats = [
-  { value: "500+", label: "Portfolio Projects Built" },
-  { value: "70%", label: "Placement Rate" },
-  { value: "50+", label: "Students Per Batch" },
-  { value: "4.9/5", label: "Student Rating" },
+  { value: "100+", label: "Projects Shipped" },
+  { value: "40+", label: "Students Placed" },
+  { value: "5", label: "Domains Covered" },
+  { value: "100%", label: "Built Hands-On" },
 ];
 
 export const whyFeatures = [
@@ -430,6 +430,87 @@ export const projectCategories = [
   "Cloud & SaaS",
   "Blockchain",
 ] as const;
+
+// Previously listed flagship/showcase builds — production-style AI products.
+export type ShowcaseProject = {
+  slug: string;
+  name: string;
+  category: string;
+  description: string;
+  tech: string[];
+  students: string[];
+  metric: string;
+  metricLabel: string;
+};
+
+export const showcaseProjects: ShowcaseProject[] = [
+  {
+    slug: "ai-customer-support-agent",
+    name: "AI Customer Support Agent",
+    category: "AI Agents",
+    description:
+      "Autonomous support agent handling 80% of tickets for a D2C brand — RAG over help docs, order lookups via tools, and human handoff.",
+    tech: ["LangChain", "GPT-4o", "Pinecone", "Next.js"],
+    students: ["Priya R.", "Arjun K."],
+    metric: "80%",
+    metricLabel: "tickets auto-resolved",
+  },
+  {
+    slug: "ai-resume-builder",
+    name: "AI Resume Builder",
+    category: "LLM Apps",
+    description:
+      "Generates ATS-optimized resumes from a conversational interview, with role-targeted rewriting and PDF export. 2,000+ resumes generated.",
+    tech: ["Claude API", "React", "Tailwind", "Supabase"],
+    students: ["Divya S.", "Mohan V."],
+    metric: "2,000+",
+    metricLabel: "resumes generated",
+  },
+  {
+    slug: "ai-marketing-automation",
+    name: "AI Marketing Automation Tool",
+    category: "Automation",
+    description:
+      "Multi-agent pipeline that drafts, schedules and A/B tests social campaigns for a local agency — cut campaign production time by 70%.",
+    tech: ["CrewAI", "Python", "Meta API", "Postgres"],
+    students: ["Karthik N.", "Sneha P."],
+    metric: "70%",
+    metricLabel: "faster campaign production",
+  },
+  {
+    slug: "ai-voice-assistant",
+    name: "AI Voice Assistant",
+    category: "AI Agents",
+    description:
+      "Tamil + English voice assistant for a clinic's appointment line — speech-to-speech with real-time booking and reminders.",
+    tech: ["Whisper", "ElevenLabs", "FastAPI", "Twilio"],
+    students: ["Rahul D."],
+    metric: "1,200+",
+    metricLabel: "calls handled monthly",
+  },
+  {
+    slug: "ai-legal-research-bot",
+    name: "AI Legal Research Bot",
+    category: "LLM Apps",
+    description:
+      "Case-law research copilot for a Chennai law firm — citation-grounded answers over 50k judgments with paragraph-level sources.",
+    tech: ["RAG", "Qdrant", "LlamaIndex", "Next.js"],
+    students: ["Ananya M.", "Vikram S."],
+    metric: "50k",
+    metricLabel: "judgments indexed",
+  },
+  {
+    slug: "ai-healthcare-assistant",
+    name: "AI Healthcare Assistant",
+    category: "SaaS",
+    description:
+      "Patient-intake and triage assistant deployed at two clinics — multilingual symptom capture with structured summaries for doctors.",
+    tech: ["Claude API", "React Native", "FHIR", "AWS"],
+    students: ["Deepak R.", "Lakshmi K."],
+    metric: "2",
+    metricLabel: "clinics in production",
+  },
+];
 
 export const techStack: { group: string; items: string[] }[] = [
   {

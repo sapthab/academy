@@ -1,20 +1,73 @@
 "use client";
 
-import { useState } from "react";
-import { projects, projectCategories } from "@/lib/data";
+import { useMemo, useState } from "react";
+import { projects, showcaseProjects } from "@/lib/data";
 import { ArrowRight, Check } from "@/components/icons";
 
+type GridProject = {
+  slug: string;
+  name: string;
+  category: string;
+  description: string;
+  tech: string[];
+  initial: string;
+  people: string;
+  sublabel: string;
+  placed: boolean;
+  metric?: string;
+  metricLabel?: string;
+};
+
+// Merge the current student projects and the flagship/showcase builds into
+// one normalized list for a single filterable grid.
+const studentItems: GridProject[] = projects.map((p) => ({
+  slug: p.slug,
+  name: p.name,
+  category: p.category,
+  description: p.description,
+  tech: p.tech,
+  initial: p.student.charAt(0),
+  people: p.student,
+  sublabel: p.placed ?? "Student Project",
+  placed: Boolean(p.placed),
+}));
+
+const showcaseItems: GridProject[] = showcaseProjects.map((p) => ({
+  slug: p.slug,
+  name: p.name,
+  category: p.category,
+  description: p.description,
+  tech: p.tech,
+  initial: p.students[0]?.charAt(0) ?? "A",
+  people: p.students.join(" & "),
+  sublabel: `by ${p.students.join(" & ")}`,
+  placed: false,
+  metric: p.metric,
+  metricLabel: p.metricLabel,
+}));
+
+const allProjects: GridProject[] = [...studentItems, ...showcaseItems];
+
 export function ProjectsGrid() {
-  const [active, setActive] = useState<string>("All");
+  const [active, setActive] = useState("All");
+
+  // Derive filter chips from the data so there are never empty filters.
+  const categories = useMemo(() => {
+    const seen: string[] = [];
+    allProjects.forEach((p) => {
+      if (!seen.includes(p.category)) seen.push(p.category);
+    });
+    return ["All", ...seen];
+  }, []);
 
   const filtered =
-    active === "All" ? projects : projects.filter((p) => p.category === active);
+    active === "All" ? allProjects : allProjects.filter((p) => p.category === active);
 
   return (
     <div>
       {/* Filters */}
       <div className="flex flex-wrap justify-center gap-2.5">
-        {projectCategories.map((c) => (
+        {categories.map((c) => (
           <button
             key={c}
             onClick={() => setActive(c)}
@@ -66,16 +119,21 @@ export function ProjectsGrid() {
             <div className="mt-6 flex items-end justify-between border-t border-line pt-5">
               <div className="flex items-center gap-2.5">
                 <span className="font-display flex size-9 items-center justify-center rounded-full bg-ink text-[12px] font-bold text-white">
-                  {p.student.charAt(0)}
+                  {p.initial}
                 </span>
                 <div>
-                  <p className="text-[13px] font-semibold leading-tight">{p.student}</p>
-                  <p className="text-[11px] text-ink/45">
-                    {p.placed ? p.placed : "Student Project"}
-                  </p>
+                  <p className="text-[13px] font-semibold leading-tight">{p.people}</p>
+                  <p className="text-[11px] text-ink/45">{p.sublabel}</p>
                 </div>
               </div>
-              <ArrowRight className="size-4 text-ink/25 transition-all group-hover:translate-x-1 group-hover:text-crimson" />
+              {p.metric ? (
+                <div className="text-right">
+                  <p className="font-tech text-xl font-bold leading-none text-crimson">{p.metric}</p>
+                  <p className="text-[10px] text-ink/45">{p.metricLabel}</p>
+                </div>
+              ) : (
+                <ArrowRight className="size-4 text-ink/25 transition-all group-hover:translate-x-1 group-hover:text-crimson" />
+              )}
             </div>
           </article>
         ))}

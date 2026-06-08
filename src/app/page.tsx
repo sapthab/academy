@@ -93,9 +93,9 @@ function HeroBento() {
         <div className="col-span-2 rounded-2xl border border-line bg-surface/90 p-4 shadow-sm backdrop-blur">
           <div className="flex items-center justify-between">
             <span className="font-tech text-[10px] uppercase tracking-[0.14em] text-ink/45">
-              Student placements
+              Students placed
             </span>
-            <span className="font-tech text-[11px] font-semibold text-crimson">▲ 70%</span>
+            <span className="font-tech text-[11px] font-semibold text-crimson">▲ 40+</span>
           </div>
           <div className="mt-3 flex h-16 items-end gap-1.5">
             {[35, 48, 42, 60, 55, 72, 66, 85, 78, 92, 88, 100].map((h, i) => (
@@ -106,23 +106,23 @@ function HeroBento() {
               />
             ))}
           </div>
-          <p className="mt-2 text-[11px] text-ink/40">Batch 1 → Batch 12</p>
+          <p className="mt-2 text-[11px] text-ink/40">Across recent batches</p>
         </div>
 
         {/* Rating tile */}
         <div className="flex flex-col justify-between rounded-2xl bg-crimson p-4 text-white shadow-[0_16px_36px_-14px_rgba(169,31,36,0.55)]">
           <Spark className="size-5 opacity-80" />
           <div>
-            <p className="font-tech text-2xl font-bold leading-none">4.9</p>
-            <p className="mt-1 text-[10.5px] leading-tight text-white/75">student rating</p>
+            <p className="font-tech text-2xl font-bold leading-none">100%</p>
+            <p className="mt-1 text-[10.5px] leading-tight text-white/75">built hands-on</p>
           </div>
         </div>
 
         {/* Projects tile */}
         <div className="rounded-2xl border border-line bg-surface/90 p-4 shadow-sm backdrop-blur">
-          <p className="font-tech text-[22px] font-bold leading-none text-ink">500+</p>
+          <p className="font-tech text-[22px] font-bold leading-none text-ink">100+</p>
           <p className="mt-1.5 text-[10.5px] leading-tight text-ink/50">
-            projects shipped annually
+            projects shipped
           </p>
           <div className="mt-3 flex -space-x-1.5">
             {["bg-rose-soft", "bg-gold/40", "bg-crimson/25", "bg-ink/15"].map((c, i) => (
