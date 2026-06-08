@@ -1,0 +1,172 @@
+/* Styling for raw Blogger HTML rendered inside .blog-prose */
+
+.blog-prose {
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.blog-prose > *:first-child {
+  margin-top: 0;
+}
+
+.blog-prose p {
+  margin: 1.25rem 0;
+  color: #36302c;
+}
+
+.blog-prose h2,
+.blog-prose h3,
+.blog-prose h4 {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+  scroll-margin-top: 90px;
+}
+
+.blog-prose h2 {
+  font-size: 1.75rem;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-prose h3 {
+  font-size: 1.35rem;
+  margin: 2rem 0 0.75rem;
+}
+
+.blog-prose h4 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.blog-prose a {
+  color: var(--crimson);
+  text-decoration: underline;
+  text-decoration-color: rgba(205, 44, 44, 0.3);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+
+.blog-prose a:hover {
+  text-decoration-color: var(--crimson);
+}
+
+.blog-prose strong,
+.blog-prose b {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.blog-prose ul,
+.blog-prose ol {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.blog-prose li {
+  margin: 0.5rem 0;
+  color: #36302c;
+}
+
+.blog-prose ul li {
+  list-style: none;
+  position: relative;
+}
+
+.blog-prose ul li::before {
+  content: "";
+  position: absolute;
+  left: -1.25rem;
+  top: 0.7rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--crimson);
+}
+
+.blog-prose ol {
+  list-style: decimal;
+}
+
+.blog-prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  margin: 1.75rem auto;
+  display: block;
+}
+
+.blog-prose iframe {
+  max-width: 100%;
+  border-radius: 1rem;
+  margin: 1.75rem 0;
+  border: 1px solid var(--line);
+}
+
+.blog-prose blockquote {
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--crimson);
+  background: var(--rose-tint);
+  border-radius: 0 1rem 1rem 0;
+  font-style: italic;
+  color: #4a423e;
+}
+
+.blog-prose pre {
+  background: var(--ink);
+  color: #f4eeea;
+  padding: 1.1rem 1.25rem;
+  border-radius: 1rem;
+  overflow-x: auto;
+  margin: 1.75rem 0;
+  font-family: var(--font-chakra), ui-monospace, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.blog-prose code {
+  font-family: var(--font-chakra), ui-monospace, monospace;
+  font-size: 0.9em;
+  background: var(--rose-tint);
+  color: var(--crimson-ink);
+  padding: 0.15em 0.4em;
+  border-radius: 6px;
+}
+
+.blog-prose pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.blog-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  font-size: 15px;
+  display: block;
+  overflow-x: auto;
+}
+
+.blog-prose th,
+.blog-prose td {
+  border: 1px solid var(--line);
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+}
+
+.blog-prose th {
+  background: var(--surface-warm);
+  font-weight: 700;
+}
+
+.blog-prose hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2.5rem 0;
+}
