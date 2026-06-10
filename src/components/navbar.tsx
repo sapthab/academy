@@ -11,7 +11,6 @@ const links = [
   { href: "/internship", label: "Internship" },
   { href: "/projects", label: "Projects" },
   { href: "/success-stories", label: "Success Stories" },
-  { href: "/pricing", label: "Pricing" },
 ];
 
 const moreLinks = [

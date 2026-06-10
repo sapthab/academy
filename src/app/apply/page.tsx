@@ -21,7 +21,7 @@ const steps = [
   },
   {
     t: "Confirm your seat",
-    b: "Pick a batch and an EMI plan. Done — see you at orientation.",
+    b: "Pick a batch that suits you. Done — see you at orientation.",
   },
 ];
 
@@ -67,8 +67,8 @@ export default function ApplyPage() {
               <ul className="mt-4 space-y-2.5 text-[14px] text-ink/75">
                 {[
                   "No coding background required for Foundations",
-                  "0% EMI plans on every program",
-                  "Merit scholarships up to 30%",
+                  "Guaranteed internship on real projects",
+                  "Placement support until you're hired",
                   "Full refund within the first 7 days",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5">

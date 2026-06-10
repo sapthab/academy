@@ -20,7 +20,6 @@ const cols = [
       { href: "/projects", label: "Projects Portfolio" },
       { href: "/success-stories", label: "Success Stories" },
       { href: "/events", label: "Events & Workshops" },
-      { href: "/pricing", label: "Pricing" },
     ],
   },
   {

@@ -114,8 +114,8 @@ export function LocalLanding(props: LocalLandingProps) {
                 <p className="mt-2 text-[13.5px] leading-relaxed text-ink-soft">{p.tagline}</p>
                 <div className="mt-auto flex items-center justify-between border-t border-line pt-5 mt-6">
                   <div>
-                    <p className="font-tech text-[17px] font-bold">{p.price}</p>
-                    <p className="text-[11px] text-ink/45">{p.duration}</p>
+                    <p className="font-tech text-[17px] font-bold">{p.duration}</p>
+                    <p className="text-[11px] text-ink/45">{p.weeks}</p>
                   </div>
                   <span className="flex size-9 items-center justify-center rounded-full bg-rose-tint text-crimson transition-transform group-hover:translate-x-1">
                     <ArrowRight className="size-4" />

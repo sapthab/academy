@@ -30,10 +30,10 @@ export default function RefundPolicyPage() {
         <li>Once the internship phase or incubation track has begun, fees for that phase are non-refundable.</li>
       </ul>
 
-      <h2>EMI &amp; scholarships</h2>
+      <h2>Payments</h2>
       <p>
-        For EMI plans, refunds are adjusted against amounts already paid. Scholarship discounts
-        are not refundable as cash.
+        Refunds are adjusted against amounts already paid. Any discounts applied at admission are
+        not refundable as cash.
       </p>
 
       <h2>How to request a refund</h2>

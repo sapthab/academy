@@ -80,8 +80,6 @@ export type Program = {
   name: string;
   duration: string;
   weeks: string;
-  price: string;
-  emi: string;
   tagline: string;
   description: string;
   modules: string[];
@@ -97,8 +95,6 @@ export const programs: Program[] = [
     name: "AI Foundations",
     duration: "3 Months",
     weeks: "12 Weeks",
-    price: "₹15,000",
-    emi: "₹2,500/mo × 6",
     tagline: "Zero to AI-literate, with projects to prove it.",
     description:
       "The launchpad. Learn how AI actually works — Python, data, machine learning fundamentals and prompt engineering — by building small, real tools every single week.",
@@ -123,8 +119,6 @@ export const programs: Program[] = [
     name: "Professional AI Engineer",
     duration: "6 Months",
     weeks: "24 Weeks",
-    price: "₹49,000",
-    emi: "₹8,200/mo × 6",
     tagline: "The complete path to a hireable AI engineer.",
     description:
       "Our flagship program. Go deep on machine learning, deep learning, LangChain, vector databases, RAG pipelines, AI agents and MCP servers — then deploy everything you build for real clients during your internship.",
@@ -154,8 +148,6 @@ export const programs: Program[] = [
     name: "AI Startup Builder",
     duration: "6 Months",
     weeks: "24 Weeks",
-    price: "₹99,000",
-    emi: "₹16,500/mo × 6",
     tagline: "Don't get hired. Get funded.",
     description:
       "For founders. Design AI products, build SaaS MVPs, talk to customers, grow your user base, and learn fundraising basics — inside our startup incubation track with mentor office hours.",
@@ -181,8 +173,6 @@ export const programs: Program[] = [
     name: "Corporate AI Training",
     duration: "Custom",
     weeks: "Custom Programs",
-    price: "Custom",
-    emi: "Talk to us",
     tagline: "Upskill your team on the AI stack that matters.",
     description:
       "Tailored AI enablement for companies — from prompt engineering for business teams to agentic automation for engineering orgs. Delivered on-site in Puducherry or remote.",
@@ -779,12 +769,12 @@ export const faqs: { q: string; a: string; group: string }[] = [
     a: "Portfolio and resume reviews, mock interviews, referrals to hiring partners, and direct introductions. Our current placement rate is 70%+ within 6 months of graduation. We support you until you're hired.",
   },
   {
-    group: "Fees",
-    q: "What are the fees? Is EMI available?",
-    a: "AI Foundations is ₹15,000, Professional AI Engineer is ₹49,000, and AI Startup Builder is ₹99,000. All programs have 0%-interest EMI plans. Merit scholarships are available each batch.",
+    group: "Admissions",
+    q: "How do I get the fee details for a program?",
+    a: "Fees are shared during your free counselling call, along with the right program for your goals and any current scholarships. Apply or request a call and we'll walk you through everything.",
   },
   {
-    group: "Fees",
+    group: "Admissions",
     q: "Is there a refund policy?",
     a: "Yes — a full refund within the first 7 days of the batch if the program isn't right for you, no questions asked.",
   },

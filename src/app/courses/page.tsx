@@ -8,7 +8,7 @@ import { CtaBand } from "@/components/cta-band";
 export const metadata = pageMeta({
   title: "AI Courses in Pondicherry — Foundations, AI Engineering & Startup Builder",
   description:
-    "Explore AGS AI Academy's AI courses in Pondicherry: AI Foundations (12 weeks), Professional AI Engineer (24 weeks) with LangChain, RAG & AI Agents, and AI Startup Builder. EMI available.",
+    "Explore AGS AI Academy's AI courses in Pondicherry: AI Foundations (12 weeks), Professional AI Engineer (24 weeks) with LangChain, RAG & AI Agents, and AI Startup Builder. Real projects, internships and placement support.",
   path: "/courses",
 });
 
@@ -31,7 +31,7 @@ export default function CoursesPage() {
             <Check className="size-4 text-crimson" /> In-person in Puducherry
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <Check className="size-4 text-crimson" /> 0% EMI on all programs
+            <Check className="size-4 text-crimson" /> Internship + placement support
           </span>
         </div>
       </PageHero>
@@ -152,14 +152,11 @@ export default function CoursesPage() {
                       p.featured ? "text-white/40" : "text-ink/40"
                     }`}
                   >
-                    Fee
+                    Fees
                   </span>
-                  <div className="text-right">
-                    <p className="font-tech text-2xl font-bold">{p.price}</p>
-                    <p className={`text-[12px] ${p.featured ? "text-white/45" : "text-ink/45"}`}>
-                      EMI: {p.emi}
-                    </p>
-                  </div>
+                  <span className={`text-right text-[13px] font-semibold ${p.featured ? "text-white/80" : "text-ink/70"}`}>
+                    Shared on your free counselling call
+                  </span>
                 </div>
                 <div
                   className={`my-5 border-t ${p.featured ? "border-white/10" : "border-line"}`}

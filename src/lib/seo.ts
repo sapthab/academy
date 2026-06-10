@@ -140,8 +140,6 @@ export function websiteSchema() {
 }
 
 export function courseSchema(p: Program) {
-  const isFree = false;
-  const priceValue = p.price.replace(/[₹,]/g, "").trim();
   return {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -152,18 +150,6 @@ export function courseSchema(p: Program) {
     educationalLevel: "Beginner to Advanced",
     inLanguage: "en-IN",
     teaches: p.modules,
-    ...(/^\d/.test(priceValue) && !isFree
-      ? {
-          offers: {
-            "@type": "Offer",
-            price: priceValue,
-            priceCurrency: "INR",
-            category: "Tuition",
-            availability: "https://schema.org/InStock",
-            url: canonical("/pricing"),
-          },
-        }
-      : {}),
     hasCourseInstance: {
       "@type": "CourseInstance",
       courseMode: ["onsite", "blended"],

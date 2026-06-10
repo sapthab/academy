@@ -51,7 +51,7 @@ export function CtaBand({
             </ButtonGhost>
           </div>
           <p className="font-tech mt-7 text-[11px] uppercase tracking-[0.18em] text-white/40">
-            Free counselling · 7-day refund · 0% EMI available
+            Free counselling · Guaranteed internship · Placement support
           </p>
         </div>
       </div>

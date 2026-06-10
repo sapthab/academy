@@ -57,8 +57,8 @@ export default function AiWithPlacementPondicherryPage() {
           a: "Yes — you receive a completion certificate and, for the internship, an internship certificate plus a letter of recommendation and project references.",
         },
         {
-          q: "What is the fee, and is EMI available?",
-          a: "Programs start at ₹15,000 and go up to ₹99,000 depending on the track, all with 0% EMI and merit scholarships. There's also a 7-day full refund if it's not the right fit.",
+          q: "How do I get the fees, and is EMI available?",
+          a: "Fees vary by program. We walk you through the full fee, EMI options and any scholarships on your free counselling call. There's also a 7-day full refund if it's not the right fit.",
         },
       ]}
       faqTitle="AI course with placement —"

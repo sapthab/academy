@@ -19,16 +19,15 @@ export default function TermsPage() {
 
       <h2>Programs &amp; admissions</h2>
       <ul>
-        <li>Program details, durations, fees and batch dates are subject to change; the version confirmed at admission applies to you.</li>
-        <li>Seats are limited per batch and confirmed on receipt of fees or an agreed EMI plan.</li>
+        <li>Program details, durations and batch dates are subject to change; the version confirmed at admission applies to you.</li>
+        <li>Seats are limited per batch and confirmed at admission.</li>
         <li>Outcomes such as internships and placement assistance are support services; we do not guarantee employment or specific salary outcomes.</li>
       </ul>
 
       <h2>Fees &amp; payments</h2>
       <p>
-        Fees are payable as per the plan agreed at admission. EMI options are offered through
-        third-party providers and are subject to their terms. Refunds are governed by our{" "}
-        <a href="/refund-policy">Refund Policy</a>.
+        Fees, payment plans and any applicable terms are shared and agreed during admission.
+        Refunds are governed by our <a href="/refund-policy">Refund Policy</a>.
       </p>
 
       <h2>Student conduct</h2>

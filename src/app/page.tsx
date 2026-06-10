@@ -70,7 +70,7 @@ function Hero() {
               <Check className="size-3.5 text-crimson" /> Guaranteed internship
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <Check className="size-3.5 text-crimson" /> 0% EMI plans
+              <Check className="size-3.5 text-crimson" /> Real client projects
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Check className="size-3.5 text-crimson" /> Placement assistance
@@ -429,10 +429,10 @@ function ProgramsSection() {
               >
                 <div>
                   <p className={`font-tech text-[17px] font-bold ${p.featured ? "text-white" : ""}`}>
-                    {p.price}
+                    {p.duration}
                   </p>
                   <p className={`text-[11px] ${p.featured ? "text-white/50" : "text-ink/45"}`}>
-                    {p.duration}
+                    {p.weeks}
                   </p>
                 </div>
                 <span

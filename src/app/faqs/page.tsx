@@ -5,9 +5,9 @@ import { FaqList } from "./faq-list";
 import { faqs } from "@/lib/data";
 
 export const metadata = pageMeta({
-  title: "FAQs — Admissions, Programs, Internships & Fees",
+  title: "FAQs — Admissions, Programs, Internships & Careers",
   description:
-    "Answers to common questions about AGS AI Academy Pondicherry: admissions process, coding prerequisites, internship guarantees, placement support, fees, EMI and refunds.",
+    "Answers to common questions about AGS AI Academy Pondicherry: admissions process, coding prerequisites, internship guarantees, placement support and careers.",
   path: "/faqs",
 });
 
@@ -33,7 +33,7 @@ export default function FaqsPage() {
         pill="FAQs"
         title="Questions?"
         accent="Straight answers."
-        body="Everything students and parents ask us — admissions, prerequisites, internships, placements and fees."
+        body="Everything students and parents ask us — admissions, prerequisites, internships, placements and careers."
       />
       <section className="px-5 py-20 lg:px-8">
         <div className="mx-auto max-w-5xl">

@@ -57,8 +57,8 @@ export default function DataSciencePondicherryPage() {
           a: "No prior coding is needed — we teach Python from the first line. You'll learn the basic statistics required step by step. Students from any branch (CSE, IT, ECE, EEE, Mechanical, Civil) and any stream can start.",
         },
         {
-          q: "What are the data science course fees and duration?",
-          a: "Our programs run from 12 to 24 weeks, starting at ₹15,000, with 0% EMI options and scholarships. The Professional AI Engineer track (24 weeks) covers the full data science to AI journey.",
+          q: "What is the data science course duration, and how do I get the fees?",
+          a: "Our programs run from 12 to 24 weeks. The Professional AI Engineer track (24 weeks) covers the full data science to AI journey. We share fees, EMI options and scholarships on your free counselling call.",
         },
       ]}
       faqTitle="Data science in Pondicherry —"

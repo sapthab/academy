@@ -57,8 +57,8 @@ export default function PythonPondicherryPage() {
           a: "Python opens the door to AI, data science, machine learning, automation and web development. At AGS AI Academy, your Python course flows directly into our AI and data science programs.",
         },
         {
-          q: "What are the Python course fees in Pondicherry?",
-          a: "Python is taught as part of our AI programs, which start at ₹15,000 (12 weeks) with 0% EMI and scholarships. You learn Python and then keep building toward an AI career.",
+          q: "How do I get the Python course fees in Pondicherry?",
+          a: "Python is taught as part of our AI programs. We share the full fees, EMI options and any scholarships on your free counselling call — so you start with a plan that fits you.",
         },
       ]}
       faqTitle="Python in Pondicherry —"

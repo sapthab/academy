@@ -19,8 +19,8 @@ const localFaqs = [
     a: "AGS AI Academy runs in-person AI courses at our campus on 100 Feet Road, Mudaliarpet, Puducherry. We're the training arm of AgileSoftLabs, so you learn by building real client projects, not just attending lectures.",
   },
   {
-    q: "What is the fee for an AI course in Pondicherry?",
-    a: "Our AI Foundations course is ₹15,000 (12 weeks), the Professional AI Engineer program is ₹49,000 (24 weeks), and the AI Startup Builder is ₹99,000. All programs have 0%-interest EMI options and merit scholarships.",
+    q: "How do I find out the fees for an AI course in Pondicherry?",
+    a: "Fees depend on the program you choose. We share full fee details — along with EMI options and any current scholarships — on your free counselling call, so you get the plan that fits your goals and budget.",
   },
   {
     q: "Do I need a coding background to join an AI course?",
@@ -142,8 +142,8 @@ export default function AiCoursePondicherryPage() {
                 <p className="mt-2 text-[13.5px] leading-relaxed text-ink-soft">{p.tagline}</p>
                 <div className="mt-auto flex items-center justify-between border-t border-line pt-5 mt-6">
                   <div>
-                    <p className="font-tech text-[17px] font-bold">{p.price}</p>
-                    <p className="text-[11px] text-ink/45">{p.duration}</p>
+                    <p className="font-tech text-[17px] font-bold">{p.duration}</p>
+                    <p className="text-[11px] text-ink/45">{p.weeks}</p>
                   </div>
                   <span className="flex size-9 items-center justify-center rounded-full bg-rose-tint text-crimson transition-transform group-hover:translate-x-1">
                     <ArrowRight className="size-4" />

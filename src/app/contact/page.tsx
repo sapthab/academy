@@ -19,7 +19,7 @@ export default function ContactPage() {
         pill="Contact Us"
         title="Talk to a human,"
         accent="not a chatbot."
-        body="Questions about programs, fees, internships or careers — our counsellors respond within 24 hours."
+        body="Questions about programs, internships or careers — our counsellors respond within 24 hours."
       />
 
       <section id="counselling" className="scroll-mt-24 px-5 py-20 lg:px-8">
@@ -88,7 +88,7 @@ export default function ContactPage() {
               <ul className="mt-4 space-y-2 text-[14px] text-white/75">
                 <li>→ Career path mapping for your background</li>
                 <li>→ Honest program recommendation</li>
-                <li>→ Fee, EMI & scholarship guidance</li>
+                <li>→ Fees, EMI & scholarship guidance</li>
                 <li>→ Campus tour (if you visit)</li>
               </ul>
             </div>

@@ -14,7 +14,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/python-course-in-pondicherry", freq: "monthly", pr: 0.85 },
     { path: "/apply", freq: "monthly", pr: 0.9 },
     { path: "/internship", freq: "monthly", pr: 0.8 },
-    { path: "/pricing", freq: "monthly", pr: 0.8 },
     { path: "/projects", freq: "monthly", pr: 0.7 },
     { path: "/success-stories", freq: "monthly", pr: 0.7 },
     { path: "/about", freq: "monthly", pr: 0.7 },
