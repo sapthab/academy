@@ -1,3 +1,11 @@
+export const socialLinks = [
+  { name: "LinkedIn", url: "https://www.linkedin.com/company/ags-ai-academy/", icon: "linkedin" },
+  { name: "Instagram", url: "https://www.instagram.com/ags_ai_academy/", icon: "instagram" },
+  { name: "Facebook", url: "https://www.facebook.com/agsaiacademy", icon: "facebook" },
+  { name: "Threads", url: "https://www.threads.com/@ags_ai_academy", icon: "threads" },
+  { name: "X", url: "https://x.com/ags_ai_academy", icon: "x" },
+] as const;
+
 export const site = {
   name: "AGS AI Academy",
   legalName: "AGS AI Academy (A unit of AgileSoftLabs)",
@@ -16,8 +24,8 @@ export const site = {
   geo: { lat: 11.9416, lng: 79.8083 },
   openingHours: "Mo-Sa 09:00-19:00",
   foundingYear: "2024",
-  // TODO: add real social profile URLs here — they power schema `sameAs` (authority signal).
-  socials: [] as string[],
+  // Social profiles — also power schema `sameAs` (authority signal).
+  socials: socialLinks.map((s) => s.url),
   parent: {
     name: "AgileSoftLabs",
     url: "https://www.agilesoftlabs.com/",

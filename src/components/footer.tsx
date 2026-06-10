@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Logo, WhatsApp } from "./icons";
-import { site } from "@/lib/data";
+import { WhatsApp, SocialIcon } from "./icons";
+import { site, socialLinks } from "@/lib/data";
 
 const cols = [
   {
@@ -24,6 +24,15 @@ const cols = [
     ],
   },
   {
+    title: "Courses in Pondicherry",
+    links: [
+      { href: "/ai-course-in-pondicherry", label: "AI Course in Pondicherry" },
+      { href: "/ai-course-with-placement-in-pondicherry", label: "AI Course with Placement" },
+      { href: "/data-science-course-in-pondicherry", label: "Data Science Course" },
+      { href: "/python-course-in-pondicherry", label: "Python Course" },
+    ],
+  },
+  {
     title: "Resources",
     links: [
       { href: "/blog", label: "Blog" },
@@ -41,11 +50,15 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
           <div>
-            <Link href="/" className="flex items-center gap-2.5">
-              <Logo className="size-9" />
-              <span className="font-display text-xl font-bold tracking-tight">
-                AGS <span className="text-crimson">AI</span> Academy
-              </span>
+            <Link href="/" className="flex items-center" aria-label="AGS AI Academy — home">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/ags-ai-academy-logo.png"
+                alt="AGS AI Academy — AI training academy in Puducherry"
+                width={1496}
+                height={525}
+                className="h-11 w-auto"
+              />
             </Link>
             <p className="mt-4 max-w-sm text-[14.5px] leading-relaxed text-ink-soft">
               Puducherry&apos;s build-first AI academy and the training arm of{" "}
@@ -77,9 +90,24 @@ export function Footer() {
               <WhatsApp className="size-4 text-[#25D366]" />
               Chat on WhatsApp
             </a>
+
+            <div className="mt-6 flex items-center gap-2.5">
+              {socialLinks.map((s) => (
+                <a
+                  key={s.name}
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`AGS AI Academy on ${s.name}`}
+                  className="flex size-9 items-center justify-center rounded-full border border-line bg-surface text-ink/60 transition-colors hover:border-crimson/40 hover:bg-rose-tint hover:text-crimson"
+                >
+                  <SocialIcon name={s.icon} className="size-4" />
+                </a>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             {cols.map((col) => (
               <div key={col.title}>
                 <h3 className="font-tech text-[11px] font-semibold uppercase tracking-[0.16em] text-ink/50">

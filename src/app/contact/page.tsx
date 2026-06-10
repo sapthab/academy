@@ -1,8 +1,8 @@
 import { pageMeta } from "@/lib/seo";
 import { PageHero } from "@/components/page-hero";
 import { LeadForm } from "@/components/lead-form";
-import { WhatsApp } from "@/components/icons";
-import { site } from "@/lib/data";
+import { WhatsApp, SocialIcon } from "@/components/icons";
+import { site, socialLinks } from "@/lib/data";
 
 export const metadata = pageMeta({
   title: "Contact Us — Talk to a Counsellor at AGS AI Academy Pondicherry",
@@ -91,6 +91,29 @@ export default function ContactPage() {
                 <li>→ Fee, EMI & scholarship guidance</li>
                 <li>→ Campus tour (if you visit)</li>
               </ul>
+            </div>
+
+            <div
+              className="reveal rounded-3xl border border-line bg-surface p-6"
+              style={{ transitionDelay: "300ms" }}
+            >
+              <p className="font-tech text-[11px] uppercase tracking-[0.18em] text-ink/45">
+                Follow us
+              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-2.5">
+                {socialLinks.map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`AGS AI Academy on ${s.name}`}
+                    className="flex size-10 items-center justify-center rounded-full border border-line bg-surface text-ink/60 transition-colors hover:border-crimson/40 hover:bg-rose-tint hover:text-crimson"
+                  >
+                    <SocialIcon name={s.icon} className="size-4" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 

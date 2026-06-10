@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Logo, ArrowRight } from "./icons";
+import { ArrowRight } from "./icons";
 
 const links = [
   { href: "/", label: "Home" },
@@ -33,11 +33,20 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-bg/85 backdrop-blur-xl">
       <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between px-5 lg:px-8">
-        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <Logo className="size-8" />
-          <span className="font-display text-[19px] font-bold tracking-tight">
-            AGS <span className="text-crimson">AI</span> Academy
-          </span>
+        <Link
+          href="/"
+          className="flex items-center"
+          onClick={() => setOpen(false)}
+          aria-label="AGS AI Academy — home"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/ags-ai-academy-logo.png"
+            alt="AGS AI Academy — AI training academy in Puducherry"
+            width={1496}
+            height={525}
+            className="h-9 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}
