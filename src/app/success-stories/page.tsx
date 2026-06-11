@@ -4,9 +4,9 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 
 export const metadata = pageMeta({
-  title: "Success Stories — What Our Interns Say",
+  title: "Student Reviews & Success Stories",
   description:
-    "Real reviews from AGS AI Academy interns: hands-on AI training, real-time client projects, and supportive mentorship at Puducherry's build-first AI academy, part of AgileSoftLabs.",
+    "Real reviews from AGS AI Academy interns in Pondicherry — hands-on AI training, real client projects and mentorship that led to internships and placements.",
   path: "/success-stories",
 });
 

@@ -1,14 +1,44 @@
 import { pageMeta, coursesItemListSchema, jsonLd } from "@/lib/seo";
-import { programs } from "@/lib/data";
+import { programs, studentReviews } from "@/lib/data";
 import { PageHero } from "@/components/page-hero";
-import { ButtonGhost, ButtonPrimary, Pill } from "@/components/ui";
+import { ButtonGhost, ButtonPrimary, Pill, SectionHead } from "@/components/ui";
 import { Check } from "@/components/icons";
 import { CtaBand } from "@/components/cta-band";
+import Link from "next/link";
+
+const courseFaqs = [
+  {
+    q: "Which AI course should I choose?",
+    a: "Beginners start with AI Foundations (12 weeks). To become a hireable AI engineer, the Professional AI Engineer track (24 weeks) is our flagship. Founders take AI Startup Builder. Not sure? A free counselling call maps your background to the right one.",
+  },
+  {
+    q: "Do I need a coding background?",
+    a: "No. AI Foundations and the Professional track both teach Python from the very first line. Students from any branch and any stream regularly start with zero coding experience.",
+  },
+  {
+    q: "Are the courses online or in-person?",
+    a: "Our core AI courses run in-person at our Puducherry campus because building together is faster. Select programs and bootcamps run hybrid; corporate training can be remote.",
+  },
+  {
+    q: "Do the courses include an internship and placement?",
+    a: "Yes. The Professional AI Engineer and AI Startup Builder tracks include a structured internship on real projects, plus placement support — portfolio reviews, mock interviews and referrals — until you're hired.",
+  },
+];
+
+const courseFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: courseFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 
 export const metadata = pageMeta({
-  title: "AI Courses in Pondicherry — Foundations, AI Engineering & Startup Builder",
+  title: "AI Courses in Pondicherry",
   description:
-    "Explore AGS AI Academy's AI courses in Pondicherry: AI Foundations (12 weeks), Professional AI Engineer (24 weeks) with LangChain, RAG & AI Agents, and AI Startup Builder. Real projects, internships and placement support.",
+    "AI courses in Pondicherry at AGS AI Academy — AI Foundations, Professional AI Engineer (LangChain, RAG, agents) & Startup Builder. Real projects + internships.",
   path: "/courses",
 });
 
@@ -16,6 +46,7 @@ export default function CoursesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(coursesItemListSchema())} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(courseFaqSchema)} />
       <PageHero
         crumbs={[{ name: "Home", path: "/" }, { name: "Courses" }]}
         pill="Courses"
@@ -203,6 +234,44 @@ export default function CoursesPage() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
             <ButtonPrimary href="/contact#counselling">Book Free Assessment</ButtonPrimary>
             <ButtonGhost href="/faqs">Read FAQs</ButtonGhost>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section className="px-5 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHead pill="Student Reviews" title="What our students" accent="say." />
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {studentReviews.slice(0, 3).map((r) => (
+              <figure key={r.name} className="lift rounded-3xl border border-line bg-surface p-7">
+                <blockquote className="text-[15px] leading-relaxed text-ink/80">&ldquo;{r.quote}&rdquo;</blockquote>
+                <figcaption className="mt-5 border-t border-line pt-4">
+                  <p className="font-display text-[15px] font-bold">{r.name}</p>
+                  <p className="mt-0.5 text-[12.5px] text-ink-soft">AGS AI Academy · {r.focus}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <p className="mt-8 text-center text-[14px] text-ink-soft">
+            <Link href="/success-stories" className="font-semibold text-crimson hover:text-crimson-deep">
+              Read all student reviews →
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      {/* Course FAQ */}
+      <section className="bg-surface-warm px-5 py-20 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <SectionHead pill="FAQs" title="AI courses —" accent="your questions." />
+          <div className="mt-10 space-y-4">
+            {courseFaqs.map((f) => (
+              <div key={f.q} className="rounded-2xl border border-line bg-surface p-6">
+                <h3 className="font-display text-[16px] font-bold">{f.q}</h3>
+                <p className="mt-2 text-[14.5px] leading-relaxed text-ink-soft">{f.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

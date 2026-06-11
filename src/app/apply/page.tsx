@@ -4,9 +4,9 @@ import { LeadForm } from "@/components/lead-form";
 import { Check } from "@/components/icons";
 
 export const metadata = pageMeta({
-  title: "Apply Now — Admissions Open at AGS AI Academy Pondicherry",
+  title: "Apply — AI Courses in Pondicherry",
   description:
-    "Apply to AGS AI Academy's AI programs in Pondicherry. Simple 3-step admission: apply online, free counselling call, seat confirmation. Batches capped at 50 students.",
+    "Apply to AGS AI Academy's AI courses in Pondicherry. Simple 3-step admission — apply online, free counselling call, seat confirmation. Batches capped at 50.",
   path: "/apply",
 });
 

@@ -6,9 +6,9 @@ import { FeatureIcon, Check, ArrowRight } from "@/components/icons";
 import { site } from "@/lib/data";
 
 export const metadata = pageMeta({
-  title: "About Us — Puducherry's Build-First AI Academy",
+  title: "About Us — Puducherry AI Academy",
   description:
-    "AGS AI Academy's mission: equip students with practical AI skills that translate into real-world opportunities. Meet the team behind Puducherry's leading AI academy.",
+    "AGS AI Academy equips Puducherry students with practical AI skills that lead to real jobs. Part of AgileSoftLabs — learn by building real client projects.",
   path: "/about",
 });
 

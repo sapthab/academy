@@ -4,9 +4,9 @@ import { CtaBand } from "@/components/cta-band";
 import { ProjectsGrid } from "./projects-grid";
 
 export const metadata = pageMeta({
-  title: "Student Projects Portfolio — AI Agents, Automation, Cyber Security & Cloud",
+  title: "Student AI Projects Portfolio",
   description:
-    "Explore real capstone and internship projects built by AGS AI Academy students in Pondicherry: AI agents, automation tools, cyber security systems, cloud SaaS and blockchain apps.",
+    "Real AI projects built by AGS AI Academy students in Pondicherry — AI agents, automation, cyber security, cloud SaaS and blockchain. Several led to placements.",
   path: "/projects",
 });
 

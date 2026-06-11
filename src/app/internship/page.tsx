@@ -6,9 +6,9 @@ import { FeatureIcon, Check } from "@/components/icons";
 import { CtaBand } from "@/components/cta-band";
 
 export const metadata = pageMeta({
-  title: "AI Internship in Pondicherry — Real Projects, Real Experience",
+  title: "AI Internship in Pondicherry",
   description:
-    "AGS AI Academy's AI Internship Program in Pondicherry: work on real client projects, internal products and open source. Four tracks — AI Development, Full Stack AI, AI Automation, AI Product Management.",
+    "AI internship in Pondicherry at AGS AI Academy — real client projects across four tracks, with a certificate, mentorship and a portfolio that gets you hired.",
   path: "/internship",
 });
 

@@ -5,9 +5,9 @@ import { FaqList } from "./faq-list";
 import { faqs } from "@/lib/data";
 
 export const metadata = pageMeta({
-  title: "FAQs — Admissions, Programs, Internships & Careers",
+  title: "FAQs — AI Courses & Admissions",
   description:
-    "Answers to common questions about AGS AI Academy Pondicherry: admissions process, coding prerequisites, internship guarantees, placement support and careers.",
+    "FAQs about AGS AI Academy Pondicherry — admissions, coding prerequisites, internship guarantees, placement support and how to get fee details. Straight answers.",
   path: "/faqs",
 });
 

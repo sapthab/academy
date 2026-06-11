@@ -28,11 +28,11 @@ const chakra = Chakra_Petch({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "AGS AI Academy — AI Course in Pondicherry | Learn AI By Building Real Products",
-    template: "%s | AGS AI Academy Pondicherry",
+    default: "AI Course in Pondicherry | AGS AI Academy",
+    template: "%s | AGS AI Academy",
   },
   description:
-    "AGS AI Academy is Puducherry's hands-on AI academy. Become an AI Engineer through real client projects, AI internships, startup incubation and mentorship. Artificial Intelligence training in Pondicherry with placement assistance.",
+    "Become an AI engineer in Puducherry by building real projects. Hands-on AI courses, guaranteed internships and placement support at AGS AI Academy, Pondicherry.",
   applicationName: "AGS AI Academy",
   alternates: { canonical: `${SITE_URL}/` },
   icons: { icon: [{ url: "/icon.png", type: "image/png" }], apple: "/icon.png" },

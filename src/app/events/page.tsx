@@ -6,9 +6,9 @@ import { SectionHead } from "@/components/ui";
 import { CtaBand } from "@/components/cta-band";
 
 export const metadata = pageMeta({
-  title: "Events & Workshops — AI Bootcamps, Hackathons & Demo Days in Pondicherry",
+  title: "AI Events & Workshops in Pondicherry",
   description:
-    "Join AGS AI Academy's AI events in Pondicherry: hands-on AI agent workshops, the Pondy AI Hackathon, GenAI bootcamps and student demo days. Free registration.",
+    "AI events in Pondicherry at AGS AI Academy — hands-on agent workshops, the Pondy AI Hackathon, GenAI bootcamps and student demo days. Free registration.",
   path: "/events",
 });
 

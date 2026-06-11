@@ -5,9 +5,9 @@ import { WhatsApp, SocialIcon } from "@/components/icons";
 import { site, socialLinks } from "@/lib/data";
 
 export const metadata = pageMeta({
-  title: "Contact Us — Talk to a Counsellor at AGS AI Academy Pondicherry",
+  title: "Contact AGS AI Academy",
   description:
-    "Contact AGS AI Academy in Puducherry: book a free counselling call, chat on WhatsApp, or visit our campus. Phone, email and address — we respond within 24 hours.",
+    "Contact AGS AI Academy in Puducherry — book a free counselling call, chat on WhatsApp, call us or visit our Mudaliarpet campus. We respond within 24 hours.",
   path: "/contact",
 });
 

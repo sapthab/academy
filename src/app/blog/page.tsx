@@ -5,9 +5,9 @@ import { CtaBand } from "@/components/cta-band";
 import { BlogListing } from "./blog-listing";
 
 export const metadata = pageMeta({
-  title: "Blog — AI Tutorials, Career Advice & Insights",
+  title: "AI Blog — Tutorials & Career Advice",
   description:
-    "The AGS AI Academy blog: hands-on AI tutorials, career guidance, and insights on building with AI — from Puducherry's build-first AI academy, part of AgileSoftLabs.",
+    "The AGS AI Academy blog — hands-on AI tutorials, career guidance and how-to-become-an-AI-engineer advice for students, from Puducherry's build-first AI academy.",
   path: "/blog",
 });
 

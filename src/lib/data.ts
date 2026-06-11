@@ -1,3 +1,22 @@
+// Blog authors — named bylines for E-E-A-T (used on blog posts + author schema).
+export const authors: Record<
+  string,
+  { name: string; role: string; bio: string; focus: string }
+> = {
+  Karthik: {
+    name: "Karthik",
+    role: "AI Engineer & Mentor, AGS AI Academy",
+    focus: "AI tutorials & how-to guides",
+    bio: "Karthik is an AI engineer at AgileSoftLabs who builds production AI systems — RAG pipelines, AI agents and automation — and mentors students at AGS AI Academy, Puducherry. He writes the technical tutorials and how-to guides here, explaining the modern AI stack in plain language.",
+  },
+  Ezilarasan: {
+    name: "Ezilarasan",
+    role: "Career Mentor, AGS AI Academy",
+    focus: "AI careers, internships & guidance",
+    bio: "Ezilarasan mentors students on AI careers, internships and placements at AGS AI Academy, Puducherry. He writes the career and guidance posts here, drawing on real student outcomes — from first project to first job.",
+  },
+};
+
 export const socialLinks = [
   { name: "LinkedIn", url: "https://www.linkedin.com/company/ags-ai-academy/", icon: "linkedin" },
   { name: "Instagram", url: "https://www.instagram.com/ags_ai_academy/", icon: "instagram" },

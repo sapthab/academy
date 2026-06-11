@@ -9,6 +9,7 @@ import {
   formatDate,
 } from "@/lib/blogger";
 import { SITE_URL } from "@/lib/seo";
+import { authors } from "@/lib/data";
 import { BlogContent } from "@/components/blog-content";
 import { ArrowRight } from "@/components/icons";
 import { CtaBand } from "@/components/cta-band";
@@ -76,6 +77,7 @@ export default async function BlogPostPage({
   const title = stripHtml(post.title);
   const mins = readingTime(post.content);
   const canonical = `${SITE_URL}/blog/${slugPath}/`;
+  const authorInfo = authors[post.author.name];
 
   const all = await getAllBlogPosts();
   const more = all.filter((p) => p.slug !== slugPath).slice(0, 4);
@@ -91,7 +93,15 @@ export default async function BlogPostPage({
     ...(post.thumbnail.startsWith("data:")
       ? {}
       : { image: { "@type": "ImageObject", url: post.thumbnail, width: 1200, height: 630 } }),
-    author: { "@type": "Person", name: post.author.name },
+    author: authorInfo
+      ? {
+          "@type": "Person",
+          name: authorInfo.name,
+          jobTitle: authorInfo.role,
+          description: authorInfo.bio,
+          worksFor: { "@type": "Organization", name: "AGS AI Academy" },
+        }
+      : { "@type": "Person", name: post.author.name },
     publisher: {
       "@type": "Organization",
       name: "AGS AI Academy",
@@ -182,6 +192,23 @@ export default async function BlogPostPage({
                   {c}
                 </span>
               ))}
+            </div>
+          )}
+
+          {/* Author bio — E-E-A-T */}
+          {authorInfo && (
+            <div className="mt-10 flex gap-5 rounded-3xl border border-line bg-surface-warm p-7">
+              <span className="font-display flex size-14 shrink-0 items-center justify-center rounded-2xl bg-crimson text-xl font-bold text-white">
+                {authorInfo.name.charAt(0)}
+              </span>
+              <div>
+                <p className="font-tech text-[11px] font-semibold uppercase tracking-[0.14em] text-ink/45">
+                  Written by
+                </p>
+                <p className="font-display mt-1 text-[18px] font-bold">{authorInfo.name}</p>
+                <p className="text-[12.5px] font-medium text-crimson">{authorInfo.role}</p>
+                <p className="mt-2.5 text-[14px] leading-relaxed text-ink-soft">{authorInfo.bio}</p>
+              </div>
             </div>
           )}
 
