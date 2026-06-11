@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Bricolage_Grotesque, Figtree, Chakra_Petch } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
@@ -24,6 +25,8 @@ const chakra = Chakra_Petch({
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
+
+const GA_ID = "G-SKW58Y044R";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -76,6 +79,18 @@ export default function RootLayout({
       className={`${bricolage.variable} ${figtree.variable} ${chakra.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* Google tag (gtag.js) — Google Analytics 4 */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
+        </Script>
+
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organizationSchema())} />
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(websiteSchema())} />
         <RevealObserver />
