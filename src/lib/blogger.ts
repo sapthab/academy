@@ -87,12 +87,12 @@ function entryToPost(item: BloggerEntry): BlogPost {
       .substring(0, 200)
       .trim() + "…";
 
-  const authorData = item.author?.[0];
-  const author: BlogAuthor = {
-    name: authorData?.name?.$t || "AGS AI Academy",
-    uri: authorData?.uri?.$t,
-    image: authorData?.gd$image?.src,
-  };
+  const categories = item.category?.map((c) => c.term) || [];
+
+  // Two fixed bylines, assigned deterministically by post type so the same name
+  // always shows for a given post: technical/tutorial posts → Karthik, everything
+  // else (career, guidance, local, news) → Ezilarasan. (Ignores the Blogger account.)
+  const author: BlogAuthor = { name: authorFor(categories) };
 
   return {
     id: item.id.$t,
@@ -104,9 +104,17 @@ function entryToPost(item: BloggerEntry): BlogPost {
     url,
     slug,
     thumbnail,
-    categories: item.category?.map((c) => c.term) || [],
+    categories,
     author,
   };
+}
+
+const TECHNICAL_LABELS = ["AI Tutorials"];
+
+/** Pick the byline from the post's labels — keeps the author consistent per post. */
+function authorFor(categories: string[]): string {
+  const isTechnical = categories.some((c) => TECHNICAL_LABELS.includes(c));
+  return isTechnical ? "Karthik" : "Ezilarasan";
 }
 
 /** Fetch all posts (up to MAX_POSTS_PER_PAGE * MAX_PAGES), deduped via React cache(). */

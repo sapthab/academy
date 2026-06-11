@@ -12,9 +12,8 @@ export const site = {
   tagline: "Learn AI By Building Real Products",
   url: "https://www.agsaiacademy.com",
   // TODO: replace with the real phone/WhatsApp before launch (must match Google Business Profile exactly).
-  phone: "+91 90000 00000",
-  whatsapp: "https://wa.me/919000000000",
-  email: "hello@agsaiacademy.com",
+  phone: "+91 99948 09678",
+  whatsapp: "https://wa.me/919994809678",
   address: "First Floor, 208, 100 Feet Road, Mudaliarpet, Puducherry, 605004, India",
   street: "First Floor, 208, 100 Feet Road, Mudaliarpet",
   city: "Puducherry",

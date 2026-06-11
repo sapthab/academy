@@ -78,7 +78,6 @@ export function organizationSchema() {
       height: 512,
     },
     image: OG_IMAGE,
-    email: site.email,
     telephone: site.phone,
     foundingDate: site.foundingYear,
     address: {

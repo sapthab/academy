@@ -75,8 +75,6 @@ export function Footer() {
             <div className="mt-6 space-y-2 text-[14px] text-ink-soft">
               <p>{site.address}</p>
               <p>
-                <a href={`mailto:${site.email}`} className="hover:text-crimson">{site.email}</a>
-                {" · "}
                 <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="hover:text-crimson">{site.phone}</a>
               </p>
             </div>

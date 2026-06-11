@@ -38,8 +38,8 @@ export default function RefundPolicyPage() {
 
       <h2>How to request a refund</h2>
       <p>
-        Email <a href={`mailto:${site.email}`}>{site.email}</a> from your registered email with
-        your name, batch and reason. We&apos;ll confirm within 2 business days.
+        Reach out via our <a href="/contact">contact page</a> with your name, batch and reason.
+        We&apos;ll confirm within 2 business days.
       </p>
 
       <h2>Contact</h2>

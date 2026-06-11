@@ -48,13 +48,14 @@ export default function PrivacyPage() {
       <h2>Your rights</h2>
       <p>
         You can request access to, correction of, or deletion of your personal data, and opt out
-        of marketing messages at any time. Email{" "}
-        <a href={`mailto:${site.email}`}>{site.email}</a> and we&apos;ll action your request.
+        of marketing messages at any time. Reach us via our{" "}
+        <a href="/contact">contact page</a> and we&apos;ll action your request.
       </p>
 
       <h2>Contact</h2>
       <p>
-        AGS AI Academy, {site.address}. Email: <a href={`mailto:${site.email}`}>{site.email}</a>.
+        AGS AI Academy, {site.address}. Phone: {site.phone}. Or use our{" "}
+        <a href="/contact">contact page</a>.
       </p>
     </LegalShell>
   );

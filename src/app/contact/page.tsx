@@ -64,20 +64,6 @@ export default function ContactPage() {
               </div>
             </a>
 
-            <a
-              href={`mailto:${site.email}`}
-              className="reveal lift flex items-center gap-4 rounded-3xl border border-line bg-surface p-6"
-              style={{ transitionDelay: "180ms" }}
-            >
-              <span className="font-tech flex size-12 items-center justify-center rounded-2xl bg-rose-tint text-lg text-crimson">
-                @
-              </span>
-              <div>
-                <p className="font-display text-[16px] font-bold">{site.email}</p>
-                <p className="text-[13.5px] text-ink-soft">For detailed queries & brochures</p>
-              </div>
-            </a>
-
             <div
               className="reveal rounded-3xl bg-ink p-7 text-white"
               style={{ transitionDelay: "240ms" }}
